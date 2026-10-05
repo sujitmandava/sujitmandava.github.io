@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sujit Mandava — AI/ML Engineer &amp; Builder</title>
+  <meta name="description" content="Sujit Mandava builds AI products: Wren, Cellar, SafeWatch, plus work in RAG, agents, evaluation, and AI governance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Light is the default; apply a saved dark choice before first paint.
+    try { if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+  </script>
+</head>
+<body>
+
+<!--
+  IMAGES: drop files into images/ using the names below and they appear automatically.
+  Until a file exists, a labeled placeholder box is shown. See images/README.md.
+-->
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">SM<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-text reveal">
+      <p class="hello"><span class="wave" aria-hidden="true">👋</span> Hi, I'm</p>
+      <h1>Sujit Mandava</h1>
+      <p class="role">AI engineer who ships products, not just models.</p>
+      <p class="lede">
+        I'm finishing an M.S. in AI at <strong>Northwestern</strong> and build
+        retrieval and agentic systems that hold up against real data. On the side
+        I'm building <strong>Wren</strong>, <strong>Cellar</strong>, and
+        <strong>SafeWatch</strong>.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#work">See my work</a>
+        <a class="btn btn-ghost" href="resume.pdf">Résumé ↓</a>
+      </div>
+      <ul class="facts">
+        <li><span class="dot dot-green"></span>Open to AI/ML roles from Dec 2026</li>
+        <li>📍 Evanston, IL</li>
+        <li>🎓 M.S. AI, Northwestern</li>
+      </ul>
+    </div>
+    <div class="hero-photo reveal">
+      <div class="ph ph-portrait" data-label="Your photo · images/portrait.jpg">
+        <img src="images/portrait.jpg" alt="Portrait of Sujit Mandava" onerror="this.remove()" />
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap about">
+      <div class="reveal">
+        <p class="kicker">About me</p>
+        <h2>I like building things people actually use.</h2>
+      </div>
+      <div class="about-body reveal">
+        <p>
+          I'm a Master's student in Artificial Intelligence at Northwestern, after a
+          B.Tech in Computer Science from IIT Palakkad. I started out as a full-stack
+          engineer and moved into ML because I wanted to build the parts of products
+          that actually think.
+        </p>
+        <p>
+          The problems I enjoy most sit where machine learning meets real users:
+          retrieval that finds the evidence that matters, agents whose decisions can be
+          checked, and evaluation that shows whether a change actually helped. I like
+          making systems measurably better <em>and</em> cheaper, then shipping them to
+          people who rely on them.
+        </p>
+        <p>
+          Outside of work I'm usually building one of my own products, or on a
+          basketball court.
+        </p>
+        <div class="focus">
+          <div><span class="focus-icon">◆</span><strong>Retrieval &amp; RAG</strong><br />Hybrid search, grounding, citations</div>
+          <div><span class="focus-icon">◆</span><strong>Agents &amp; evaluation</strong><br />Agentic retrieval, LLM judges, prompt optimisation</div>
+          <div><span class="focus-icon">◆</span><strong>Product engineering</strong><br />FastAPI, React, Postgres, Docker, observability</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section section-tint" id="education">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="kicker">Education</p>
+        <h2>Academic background</h2>
+      </div>
+      <div class="edu-list">
+
+        <article class="edu reveal">
+          <div class="ph ph-crest" data-label="Logo">
+            <img src="images/school-1.png" alt="Northwestern University logo" onerror="this.remove()" />
+          </div>
+          <div class="edu-main">
+            <h3>Master of Science in Artificial Intelligence</h3>
+            <p class="edu-school">Northwestern University · Evanston, IL</p>
+            <!-- TODO (optional): <p class="edu-detail">Relevant coursework: …</p> -->
+          </div>
+          <p class="edu-date">Sep 2025 – Dec 2026</p>
+        </article>
+
+        <article class="edu reveal">
+          <div class="ph ph-crest" data-label="Logo">
+            <img src="images/school-2.png" alt="IIT Palakkad logo" onerror="this.remove()" />
+          </div>
+          <div class="edu-main">
+            <h3>Bachelor of Technology in Computer Science &amp; Engineering</h3>
+            <p class="edu-school">Indian Institute of Technology Palakkad · India</p>
+            <p class="edu-detail">Captain &amp; assistant coach of the basketball club: founded the institute's first women's team (quarterfinals in its first tournament) and grew the club from 8 to 65+ members.</p>
+          </div>
+          <p class="edu-date">Oct 2020 – Jul 2024</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="kicker">Experience</p>
+        <h2>Where I've worked</h2>
+      </div>
+      <div class="timeline">
+
+        <article class="job reveal">
+          <div class="job-head">
+            <div class="ph ph-crest" data-label="Logo">
+              <img src="images/relativity.png" alt="Relativity logo" onerror="this.remove()" />
+            </div>
+            <div class="job-title">
+              <h3>Applied Scientist Intern</h3>
+              <p class="edu-school">Relativity</p>
+            </div>
+            <p class="edu-date">Jun 2026 – Aug 2026</p>
+          </div>
+          <p class="job-summary">
+            Built an agentic system that surfaces supporting evidence for legal claims
+            across a 47K-document OCR'd corpus. It combines hybrid RAG and agentic
+            retrieval with an LLM judge that ranks candidate evidence, and reviewer
+            feedback flows back in through GEPA-optimised ranking prompts.
+          </p>
+          <div class="stats">
+            <div><strong>0.30 → 0.68</strong><span>recall@1000 from agentic retrieval over a claim-anchored pipeline</span></div>
+            <div><strong>+62%</strong><span>supporting citations: SME review found 13 that the original filing missed</span></div>
+            <div><strong>96% lower cost</strong><span>$17 per claim vs. $400 for exhaustive LLM review, keeping 80% of its recall</span></div>
+          </div>
+          <ul class="tags"><li>Hybrid RAG</li><li>Agentic retrieval</li><li>RRF fusion</li><li>LLM-as-judge</li><li>DSPy / GEPA</li></ul>
+        </article>
+
+        <article class="job reveal">
+          <div class="job-head">
+            <div class="ph ph-crest" data-label="Logo">
+              <img src="images/hgrid.png" alt="hGrid logo" onerror="this.remove()" />
+            </div>
+            <div class="job-title">
+              <h3>Software Engineer</h3>
+              <p class="edu-school">hGrid (Mahathi Software)</p>
+            </div>
+            <p class="edu-date">Dec 2024 – Aug 2025</p>
+          </div>
+          <ul class="highlights">
+            <li>Owned the full-stack architecture of three production products (CareTab, SunPay, and Docuracy) in a zero-legacy environment, all backed by Amazon RDS</li>
+            <li>Built deployment, observability, and monitoring pipelines from scratch, so incidents surfaced as dashboard alerts instead of user reports</li>
+            <li>Moved CareTab's scheduled and long-running jobs onto Celery workers, keeping API latency stable under load</li>
+          </ul>
+          <ul class="tags"><li>Django</li><li>Celery</li><li>AWS</li><li>Docker</li><li>nginx</li><li>Grafana / Loki</li></ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="section section-tint" id="work">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="kicker">Featured work</p>
+        <h2>Products I'm building</h2>
+        <p class="section-sub">Real apps aimed at real users. Each one started as a company idea.</p>
+      </div>
+
+      <!-- WREN -->
+      <article class="feature reveal" style="--brand: #5a4a8c; --brand-soft: #efebf7;">
+        <div class="feature-info">
+          <div class="feature-head">
+            <div class="ph ph-logo" data-label="Logo">
+              <img src="images/wren/logo.png" alt="Wren logo" onerror="this.remove()" />
+            </div>
+            <div>
+              <h3>Wren</h3>
+              <p class="feature-tag">Hear how they're really doing.</p>
+            </div>
+          </div>
+          <p>
+            A care companion for families of a parent with memory loss. Short daily voice
+            conversations and check-ins become a calm, readable picture of mood,
+            medications, and gentle shifts in speech. Every change is measured against
+            the person's own baseline, never against a diagnosis, and the picture is
+            shared across the family and easy for the doctor to read.
+          </p>
+          <ul class="highlights">
+            <li>Self-relative speech and language trends drawn from everyday conversation</li>
+            <li>Ask Wren: a RAG assistant that grounds GPT-4o in recent sessions, transcripts, check-ins, and notes</li>
+            <li>One React codebase ships to web, iOS, and Android via Capacitor</li>
+          </ul>
+          <ul class="tags"><li>React</li><li>TypeScript</li><li>Capacitor</li><li>FastAPI</li><li>PostgreSQL</li><li>Azure OpenAI</li></ul>
+          <div class="feature-links">
+            <!-- TODO: add once there's a public URL: <a class="btn btn-brand" href="https://…">Visit Wren ↗</a> -->
+            <span class="status">In beta</span>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="ph ph-shot shot-main" data-label="Wren screenshot · images/wren/shot-1.png">
+            <img src="images/wren/shot-1.png" alt="Wren screenshot" onerror="this.remove()" />
+          </div>
+          <div class="ph ph-shot" data-label="images/wren/shot-2.png">
+            <img src="images/wren/shot-2.png" alt="Wren screenshot" onerror="this.remove()" />
+          </div>
+          <div class="ph ph-shot" data-label="images/wren/shot-3.png">
+            <img src="images/wren/shot-3.png" alt="Wren screenshot" onerror="this.remove()" />
+          </div>
+        </div>
+      </article>
+
+      <!-- CELLAR -->
+      <article class="feature feature-flip reveal" style="--brand: #8f1226; --brand-soft: #fbe7ec;">
+        <div class="feature-info">
+          <div class="feature-head">
+            <div class="ph ph-logo" data-label="Logo">
+              <img src="images/cellar/logo.png" alt="Cellar logo" onerror="this.remove()" />
+            </div>
+            <div>
+              <h3>Cellar</h3>
+              <p class="feature-tag">Rank every wine by comparing it to the last one.</p>
+            </div>
+          </div>
+          <p>
+            Beli for wine. The 100-point scale is a critic's tool handed to consumers, and
+            nobody knows what a 91 means. Cellar only asks "did you like this more than
+            that?": pick a bucket, answer a few head-to-heads, and the bottle drops into
+            place in your personal ranking. The score is a readout of where it landed,
+            never a number you type.
+          </p>
+          <ul class="highlights">
+            <li>Binary-search placement: at most five taps, even on a 500-wine list</li>
+            <li>Claude-vision label scanning, matched against a 118k-wine Postgres catalogue with 8 ms trigram search</li>
+            <li>Predicted scores blend collaborative filtering with a content prior. The model narrates; the maths picks.</li>
+          </ul>
+          <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Drizzle</li><li>Claude API</li></ul>
+          <div class="feature-links">
+            <!-- TODO: add once there's a public URL: <a class="btn btn-brand" href="https://…">Visit Cellar ↗</a> -->
+            <span class="status">In development</span>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="ph ph-shot shot-main" data-label="Cellar screenshot · images/cellar/shot-1.png">
+            <img src="images/cellar/shot-1.png" alt="Cellar screenshot" onerror="this.remove()" />
+          </div>
+          <div class="ph ph-shot" data-label="images/cellar/shot-2.png">
+            <img src="images/cellar/shot-2.png" alt="Cellar screenshot" onerror="this.remove()" />
+          </div>
+          <div class="ph ph-shot" data-label="images/cellar/shot-3.png">
+            <img src="images/cellar/shot-3.png" alt="Cellar screenshot" onerror="this.remove()" />
+          </div>
+        </div>
+      </article>
+
+      <!-- SAFEWATCH -->
+      <article class="feature reveal" style="--brand: #0f766e; --brand-soft: #e0f2ef;">
+        <div class="feature-info">
+          <div class="feature-head">
+            <div class="ph ph-logo" data-label="Logo">
+              <img src="images/safewatch/logo.png" alt="SafeWatch logo" onerror="this.remove()" />
+            </div>
+            <div>
+              <h3>SafeWatch</h3>
+              <p class="feature-tag">Faster response to safety events in nursing homes</p>
+            </div>
+          </div>
+          <p>
+            When a nursing home is short-staffed, a resident's fall can go unnoticed for
+            too long. SafeWatch sends high-risk events such as falls and sensor alerts
+            into one triage queue, starts an SLA timer, and escalates from CNA to charge
+            nurse to administrator until someone acknowledges the alert.
+          </p>
+          <ul class="highlights">
+            <li>Event → alert → acknowledgement → escalation engine with SLA countdowns</li>
+            <li>Role-based escalation and an immutable audit trail for every state change</li>
+            <li>Ingests events via API, UI simulation, or JSON replay for demos</li>
+          </ul>
+          <ul class="tags"><li>FastAPI</li><li>SQLAlchemy</li><li>PostgreSQL</li><li>React</li><li>Docker</li></ul>
+          <div class="feature-links">
+            <!-- TODO: add once there's a public demo: <a class="btn btn-brand" href="https://…">Watch the demo ↗</a> -->
+            <span class="status">MVP</span>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="ph ph-shot shot-main" data-label="SafeWatch screenshot · images/safewatch/shot-1.png">
+            <img src="images/safewatch/shot-1.png" alt="SafeWatch triage queue" onerror="this.remove()" />
+          </div>
+          <div class="ph ph-shot" data-label="images/safewatch/shot-2.png">
+            <img src="images/safewatch/shot-2.png" alt="SafeWatch escalation" onerror="this.remove()" />
+          </div>
+          <div class="ph ph-shot" data-label="images/safewatch/shot-3.png">
+            <img src="images/safewatch/shot-3.png" alt="SafeWatch audit trail" onerror="this.remove()" />
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MORE PROJECTS -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="kicker">More projects</p>
+        <h2>Experiments &amp; engineering</h2>
+        <p class="section-sub">Smaller builds where I go deep on one idea.</p>
+      </div>
+      <div class="grid">
+
+        <article class="card reveal" data-cat="llm">
+          <p class="cat">LLM systems</p>
+          <h3>Trace AI</h3>
+          <p>A compliance copilot that grades contract checklists with citations. A deterministic decision policy sits on top of the LLM, every run produces an auditable report, and a regression eval harness tracks quality.</p>
+          <ul class="tags"><li>OpenAI</li><li>FAISS</li><li>FastAPI</li></ul>
+          <a class="repo" href="https://github.com/sujitmandava/trace-ai">Source →</a>
+        </article>
+
+        <article class="card reveal" data-cat="llm">
+          <p class="cat">LLM systems</p>
+          <h3>Chronicle</h3>
+          <p>A staleness-aware RAG service. Retrieval scores decay with document age, answers warn when their context is stale, and only changed chunks get re-embedded. Monitored with Grafana and Loki.</p>
+          <ul class="tags"><li>FastAPI</li><li>SQLite</li><li>Grafana</li></ul>
+          <a class="repo" href="https://github.com/sujitmandava/chronicle">Source →</a>
+        </article>
+
+        <article class="card reveal" data-cat="llm">
+          <p class="cat">LLM systems</p>
+          <h3>MADRAG</h3>
+          <p>A modular RAG platform where each domain plugs in its own dataset and config. Has a React UI and separate dev and prod Docker deployments behind NGINX.</p>
+          <ul class="tags"><li>FAISS</li><li>React</li><li>NGINX</li></ul>
+          <a class="repo" href="https://github.com/sujitmandava/madrag">Source →</a>
+        </article>
+
+        <article class="card reveal" data-cat="llm">
+          <p class="cat">LLM systems</p>
+          <h3>Nietzsche Persona Chatbot</h3>
+          <p>GPT-2 fine-tuned on Nietzsche's works from Project Gutenberg, with perplexity-based evaluation. Generation is grounded in passages retrieved with FAISS, and every response cites its source.</p>
+          <ul class="tags"><li>GPT-2</li><li>FAISS</li><li>sentence-transformers</li></ul>
+          <!-- TODO: add repo link -->
+        </article>
+
+        <article class="card reveal" data-cat="ml">
+          <p class="cat">Agents &amp; ML</p>
+          <h3>FPL Agent AI</h3>
+          <p>An end-to-end Fantasy Premier League agent: it forecasts expected points, optimises the squad as a MILP, explains its picks, and applies them on the live site with Playwright.</p>
+          <ul class="tags"><li>PuLP</li><li>scikit-learn</li><li>Playwright</li></ul>
+          <a class="repo" href="https://github.com/sujitmandava/fpl-agent-ai">Source →</a>
+        </article>
+
+        <article class="card reveal" data-cat="ml">
+          <p class="cat">Agents &amp; ML</p>
+          <h3>Edge ML</h3>
+          <p>INT8 post-training quantization of MobileNet with TensorFlow Lite. The model is 7.3× smaller (19.9 → 2.7 MB) and top-1 accuracy moved from 37.5% to 36.0%.</p>
+          <ul class="tags"><li>TensorFlow</li><li>TFLite</li></ul>
+          <a class="repo" href="https://github.com/sujitmandava/edge_ml">Source →</a>
+        </article>
+
+        <article class="card reveal" data-cat="ml">
+          <p class="cat">Agents &amp; ML</p>
+          <h3>Rank-Aware Recommender</h3>
+          <p>Popularity, BPR, and content-based recommenders on MovieLens, with MMR re-ranking. Compared on NDCG, recall, coverage, and stability.</p>
+          <ul class="tags"><li>NumPy</li><li>pandas</li></ul>
+          <a class="repo" href="https://github.com/sujitmandava/rank-aware-recommender">Source →</a>
+        </article>
+
+        <article class="card reveal" data-cat="ml">
+          <p class="cat">Quant</p>
+          <h3>Quant Momentum</h3>
+          <p>A cross-sectional momentum research framework: quantile long/short portfolios with transaction costs, drawdowns, tail risk, and regime analysis.</p>
+          <ul class="tags"><li>pandas</li><li>SciPy</li></ul>
+          <!-- TODO: add repo link once pushed -->
+        </article>
+
+        <article class="card reveal" data-cat="infra">
+          <p class="cat">AI governance</p>
+          <h3>AI Egress Proxy</h3>
+          <p>An HTTP/HTTPS proxy in Go with TLS MITM and HTTP/2. It logs traffic to AI domains, redacts sensitive data based on a policy, and hot-reloads that policy without restarting.</p>
+          <ul class="tags"><li>Go</li><li>TLS</li><li>DLP</li></ul>
+          <!-- TODO: repo is private; uncomment when public: <a class="repo" href="https://github.com/sujitmandava/ai-egress-proxy">Source →</a> -->
+        </article>
+
+        <article class="card reveal" data-cat="infra">
+          <p class="cat">AI governance</p>
+          <h3>ShadowAI Discovery</h3>
+          <p>A Chrome extension that detects pastes, uploads, and prompts sent to ChatGPT, Claude, and Gemini. It sends metadata-only events (no raw text) to an admin dashboard.</p>
+          <ul class="tags"><li>Chrome MV3</li><li>FastAPI</li></ul>
+          <!-- TODO: add repo link once pushed -->
+        </article>
+
+        <article class="card reveal" data-cat="infra">
+          <p class="cat">Infrastructure</p>
+          <h3>Cursor LLM Gateway Proxy</h3>
+          <p>An NGINX and ngrok edge that routes Cursor's LLM calls through any OpenAI-compatible gateway. It handles bearer auth, CORS preflights, and unbuffered streaming.</p>
+          <ul class="tags"><li>NGINX</li><li>Docker</li></ul>
+          <!-- TODO: add repo link once pushed -->
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="contact reveal">
+        <h2>Let's build something together.</h2>
+        <p>I'm looking for AI/ML engineering roles where I can ship products end to end. My inbox is always open.</p>
+        <div class="cta-row cta-center">
+          <a class="btn btn-light" href="mailto:sujitmandava123@gmail.com">Email me</a>
+          <a class="btn btn-outline-light" href="https://www.linkedin.com/in/sujit-mandava">LinkedIn</a>
+          <a class="btn btn-outline-light" href="resume.pdf">Résumé</a>
+          <a class="btn btn-outline-light" href="https://github.com/sujitmandava">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>© 2026 Sujit Mandava · Built by hand, no frameworks.</p>
+  </div>
+</footer>
+
+<script>
+  // Fade sections in as they scroll into view (content stays visible without JS).
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Dark mode toggle, remembered across visits.
+  const toggle = document.querySelector('.theme-toggle');
+  const syncToggle = () => {
+    const dark = document.documentElement.dataset.theme === 'dark';
+    toggle.setAttribute('aria-pressed', String(dark));
+    toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  };
+  toggle.addEventListener('click', () => {
+    const dark = document.documentElement.dataset.theme !== 'dark';
+    if (dark) document.documentElement.dataset.theme = 'dark';
+    else delete document.documentElement.dataset.theme;
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+    syncToggle();
+  });
+  syncToggle();
+</script>
+
+</body>
+</html>
