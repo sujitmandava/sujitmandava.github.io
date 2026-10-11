@@ -6,7 +6,7 @@ Until a file exists, a labeled placeholder box is shown in its place.
 | File | Used for | Suggested size |
 |---|---|---|
 | `portrait.png` | Hero photo (arched frame) | 800×1000 (4:5) |
-| `school-1.png`, `school-2.png` | Education logos | 200×200, transparent PNG |
+| `school-1.jpg`, `school-2.png` | Education logos | 200×200, transparent PNG |
 | `relativity.png`, `hgrid.svg` | Experience logos | 200×200, transparent PNG |
 | `wren/logo.png` | Wren logo | 256×256, transparent PNG |
 | `wren/shot-1.png` … `shot-3.png` | Wren phone screenshots, shown left to right | 1170×2532 (iPhone, portrait) |
