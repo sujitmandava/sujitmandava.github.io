@@ -9,11 +9,10 @@ Until a file exists, a labeled placeholder box is shown in its place.
 | `school-1.png`, `school-2.png` | Education logos | 200×200, transparent PNG |
 | `relativity.png`, `hgrid.svg` | Experience logos | 200×200, transparent PNG |
 | `wren/logo.png` | Wren logo | 256×256, transparent PNG |
-| `wren/shot-1.png` … `shot-3.png` | Wren phone screenshots (1 is the large center one) | 1170×2532 (9:19.5, portrait) |
+| `wren/shot-1.png` … `shot-3.png` | Wren phone screenshots, shown left to right | 1170×2532 (iPhone, portrait) |
 | `cellar/logo.png` | Cellar logo | 256×256 |
 | `cellar/shot-1.png` … `shot-3.png` | Cellar phone screenshots | 1170×2532 |
 | `safewatch/logo.png` | SafeWatch logo | 256×256 |
-| `safewatch/shot-1.png` … `shot-3.png` | SafeWatch phone screenshots | 1170×2532 |
 
-Screenshots are cropped from the top, so put the most important UI there.
+Screenshots that aren't 1170×2532 are cropped from the top, so put the most important UI there.
 Want a different extension (e.g. .jpg/.webp)? Change the matching `src` in index.html.

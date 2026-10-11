@@ -167,7 +167,8 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 .ph-logo { box-shadow: var(--shadow); }
 .ph-crest { width: 56px; height: 56px; flex: none; border-radius: 12px; }
 .ph-crest img { object-fit: contain; padding: 4px; }
-.ph-shot { border-radius: 22px; aspect-ratio: 9 / 19.5; }
+/* Exact iPhone screenshot ratio (1170×2532), so images fill the frame uncropped. */
+.ph-shot { border-radius: 22px; aspect-ratio: 1170 / 2532; box-shadow: var(--shadow); }
 .ph-shot::before { overflow-wrap: anywhere; }
 .ph-shot img { object-position: top; }
 
@@ -251,12 +252,12 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 }
 
 .shots {
-  display: grid; grid-template-columns: 1fr 1.2fr 1fr; align-items: center; gap: 14px;
+  display: grid; grid-template-columns: repeat(3, 1fr); align-items: start; gap: 14px;
   max-width: 560px; width: 100%; margin: 0 auto;
 }
-/* Phone screenshots: the main one sits in the middle, a little larger. */
-.shot-main { order: 2; box-shadow: var(--shadow-lg); }
-.shots > :last-child { order: 3; }
+/* Text-only feature card (no screenshots). */
+@media (min-width: 960px) { .feature-solo { grid-template-columns: 1fr; } }
+.feature-solo .feature-info > p { max-width: 72ch; }
 
 /* ---------- Project grid ---------- */
 .grid {
