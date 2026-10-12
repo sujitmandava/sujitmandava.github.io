@@ -251,8 +251,8 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 }
 
 .shots {
-  display: grid; grid-template-columns: repeat(3, 1fr); align-items: start; gap: clamp(10px, 2.5vw, 24px);
-  max-width: 720px; width: 100%; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); align-items: start; gap: clamp(10px, 2.5vw, 28px);
+  max-width: 960px; width: 100%; margin: 0 auto;
 }
 
 /* ---------- Project grid ---------- */
