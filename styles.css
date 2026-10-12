@@ -218,15 +218,16 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 
 /* ---------- Featured ---------- */
 .feature {
+  --pad: 28px;
   display: grid; gap: 36px; align-items: center;
-  padding: 28px; margin-bottom: 40px;
+  padding: var(--pad); margin-bottom: 40px; overflow: hidden;
   border-radius: 24px;
   background: var(--brand-soft);
   border: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
   box-shadow: var(--shadow);
 }
 /* Stacked: header and text first, screenshots below. */
-@media (min-width: 960px) { .feature { padding: 48px; gap: 40px; } }
+@media (min-width: 960px) { .feature { --pad: 48px; gap: 40px; } }
 .feature-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
 .feature h3 { margin: 0; font-size: 2rem; color: var(--brand); }
 [data-theme="dark"] .feature h3 { color: color-mix(in srgb, var(--brand) 55%, white); }
@@ -250,10 +251,14 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
   padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border);
 }
 
+/* Screenshots run edge to edge along the bottom of the card, split by hairlines. */
 .shots {
-  display: grid; grid-template-columns: repeat(3, 1fr); align-items: start; gap: clamp(10px, 2.5vw, 28px);
-  max-width: 960px; width: 100%; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  margin: 0 calc(-1 * var(--pad)) calc(-1 * var(--pad));
+  border-top: 1px solid color-mix(in srgb, var(--brand) 18%, transparent);
+  background: color-mix(in srgb, var(--brand) 18%, transparent);
 }
+.shots .ph-shot { border-radius: 0; box-shadow: none; border: 0; }
 
 /* ---------- Project grid ---------- */
 .grid {
