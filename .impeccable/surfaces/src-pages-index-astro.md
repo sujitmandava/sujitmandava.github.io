@@ -9,7 +9,7 @@ related_targets: []
 
 Scope: the single-page personal site (`src/pages/index.astro`). Mode: Persuade.
 
-Visitor: an applied-AI hiring manager or recruiter skimming for a minute, often on a phone. Action: get in touch (email) or open the résumé. Proof: Relativity results, hGrid production ownership, three self-built products (Wren with brag video; FPL planner and SafeWatch, videos pending), a trimmed project index of six. Constraints: keep dark-mode toggle, About with basketball, school/employer logos; no portrait; nothing template-like, austere, or playful.
+Visitor: an applied-AI hiring manager or recruiter skimming for a minute, often on a phone. Action: get in touch (email) or open the résumé. Proof: Relativity results, hGrid production ownership, three self-built products (Wren and the FPL planner with brag videos; SafeWatch video pending), a trimmed project index of six. Constraints: keep dark-mode toggle, About with basketball, school/employer logos; no portrait; nothing template-like, austere, or playful.
 
 ## Direction contract
 
