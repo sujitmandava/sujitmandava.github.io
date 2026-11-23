@@ -316,6 +316,7 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 .stack { margin-top: 20px; font-size: 0.95rem; font-weight: 600; color: var(--ink-2); }
 .stack, .board__stack { display: flex; flex-wrap: wrap; column-gap: 0.35em; }
 .stack span, .board__stack span { white-space: nowrap; }
+.stack .stack__long { white-space: normal; }
 .stack span:not(:last-child)::after, .board__stack span:not(:last-child)::after { content: " ·"; }
 
 /* Relativity's results, set like platform numbers */
