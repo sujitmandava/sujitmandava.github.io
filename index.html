@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sujit Mandava — AI/ML Engineer &amp; Builder</title>
-  <meta name="description" content="Sujit Mandava builds AI products: Wren, Cellar, SafeWatch, plus work in RAG, agents, evaluation, and AI governance." />
+  <meta name="description" content="Sujit Mandava builds AI products: Wren, an FPL planner, SafeWatch, plus work in RAG, agents, evaluation, and AI governance." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
@@ -252,50 +252,36 @@
         </div>
       </article>
 
-      <!-- CELLAR -->
-      <article class="feature reveal" style="--brand: #8f1226; --brand-soft: #fbe7ec;">
+      <!-- FPL PLANNER -->
+      <article class="feature reveal" style="--brand: #1f6f43; --brand-soft: #e3f1e8;">
         <div class="feature-info">
           <div class="feature-head">
             <div class="ph ph-logo" data-label="Logo">
-              <img src="images/cellar/logo.png" alt="Cellar logo" onerror="this.remove()" />
+              <img src="images/fpl/logo.png" alt="FPL Agent AI logo" onerror="this.remove()" />
             </div>
             <div>
-              <div class="feature-title"><h3>Cellar</h3><span class="status">In development</span></div>
-              <p class="feature-tag">Rank every wine by comparing it to the last one.</p>
+              <div class="feature-title"><h3>FPL Agent AI</h3><span class="status">In development</span></div>
+              <p class="feature-tag">A Fantasy Premier League planner for anyone with a team ID.</p>
             </div>
           </div>
-          <!-- TODO: add once there's a public URL: <a class="btn btn-brand" href="https://…">Visit Cellar ↗</a> -->
+          <a class="btn btn-brand" href="https://github.com/sujitmandava/fpl-agent-ai">Source ↗</a>
           <div class="feature-body">
             <p>
-              The 100-point scale is a critic's tool handed to consumers, and nobody knows
-              what a 91 means. Cellar only asks "did you like this more than that?": pick
-              a bucket, answer a few head-to-heads, and the bottle drops into place in
-              your personal ranking. The score is a readout of where it landed, never a
-              number you type.
+              Enter an FPL team ID and it plans your week from FPL's public data:
+              transfers, lineup, captain, and when to play each chip. There's no login
+              and it never touches your account; it shows the moves and you make them.
+              The Plan screen draws them on a tactics board against your mini-league rival.
             </p>
             <div>
               <ul class="highlights">
-                <li>Binary-search placement: at most five taps, even on a 500-wine list</li>
-                <li>Claude-vision label scanning, matched against a 118k-wine Postgres catalog with 8 ms trigram search</li>
-                <li>Predicted scores blend collaborative filtering with a content prior. The model narrates; the math picks.</li>
+                <li>An expected-points model built from minutes, xG/xA, defensive contributions, and opponent-adjusted team ratings, backtested walk-forward against a points-per-game baseline</li>
+                <li>A mixed-integer program picks the squad, XI, and captain for every gameweek in the horizon, and gives every remaining chip its own week before it expires</li>
+                <li>Mini-league view: rivals' captains and chips, and effective ownership that counts captains double</li>
               </ul>
-              <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>PostgreSQL</li><li>Drizzle</li><li>Claude API</li></ul>
+              <ul class="tags"><li>Python</li><li>PuLP</li><li>pandas</li><li>FastAPI</li><li>Next.js</li></ul>
             </div>
           </div>
         </div>
-        <!-- Screenshots hidden until Cellar is ready to show.
-        <div class="shots">
-          <div class="ph ph-shot" data-label="images/cellar/shot-1.png">
-            <img src="images/cellar/shot-1.png" alt="Cellar screenshot" onerror="this.remove()" />
-          </div>
-          <div class="ph ph-shot" data-label="images/cellar/shot-2.png">
-            <img src="images/cellar/shot-2.png" alt="Cellar screenshot" onerror="this.remove()" />
-          </div>
-          <div class="ph ph-shot" data-label="images/cellar/shot-3.png">
-            <img src="images/cellar/shot-3.png" alt="Cellar screenshot" onerror="this.remove()" />
-          </div>
-        </div>
-        -->
       </article>
 
       <!-- SAFEWATCH -->
@@ -360,12 +346,11 @@
           <a class="repo" href="https://github.com/sujitmandava/chronicle">Source →</a>
         </article>
 
-        <article class="card reveal" data-cat="ml">
-          <p class="cat">Agents &amp; ML</p>
-          <h3>FPL Agent AI</h3>
-          <p>An end-to-end Fantasy Premier League agent: it forecasts expected points, optimizes the squad as a MILP, explains its picks, and applies them on the live site with Playwright.</p>
-          <ul class="tags"><li>PuLP</li><li>scikit-learn</li><li>Playwright</li></ul>
-          <a class="repo" href="https://github.com/sujitmandava/fpl-agent-ai">Source →</a>
+        <article class="card reveal" data-cat="product">
+          <p class="cat">Product · paused</p>
+          <h3>Cellar</h3>
+          <p>A wine-ranking app that replaces the 100-point scale with head-to-head comparisons: binary-search placement in at most five taps, Claude-vision label scanning against a 118k-wine catalog, and predicted scores from collaborative filtering.</p>
+          <ul class="tags"><li>Next.js</li><li>PostgreSQL</li><li>Claude API</li></ul>
         </article>
 
         <article class="card reveal" data-cat="quant">
