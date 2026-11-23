@@ -1,0 +1,375 @@
+---
+import Bullet from '../components/Bullet.astro';
+import Arrow from '../components/Arrow.astro';
+import '../styles/global.css';
+
+const email = 'sujitmandava123@gmail.com';
+
+const stops = [
+  { name: 'IIT Palakkad', note: 'B.Tech CSE · 2020–24', href: '#iit' },
+  { name: 'hGrid', note: '3 production products · 2024–25', href: '#hgrid' },
+  { name: 'Northwestern', note: 'M.S. AI · 2025–26', href: '#northwestern' },
+  { name: 'Relativity', note: 'Recall 0.30 → 0.68 · 2026', href: '#relativity' },
+];
+
+const products = [
+  {
+    id: 'wren',
+    letter: 'W',
+    name: 'Wren',
+    status: 'In beta',
+    tag: "Hear how they're really doing.",
+    body: "A care companion for families of a parent with memory loss. Short daily voice conversations and check-ins become a calm, readable picture of mood, medications, and gentle shifts in speech. Every change is measured against the person's own baseline, never against a diagnosis, and the whole family and the doctor see the same picture.",
+    stops: [
+      "Speech and language trends from everyday conversation, compared only to the person's own history",
+      'Ask Wren: a RAG assistant that grounds GPT-4o in recent sessions, transcripts, check-ins, and notes',
+      'One React codebase ships to web, iOS, and Android via Capacitor',
+    ],
+    stack: ['React', 'TypeScript', 'Capacitor', 'FastAPI', 'PostgreSQL', 'Azure OpenAI'],
+    video: { src: '/video/wren.mp4', poster: '/video/wren-poster.webp', label: 'Wren launch film: the Home screen walking through one evening, from Wren Time with Ruth to “Today’s done”.' },
+  },
+  {
+    id: 'fpl',
+    letter: 'F',
+    name: 'FPL Agent AI',
+    status: 'In development',
+    tag: 'A Fantasy Premier League planner for anyone with a team ID.',
+    body: "Enter an FPL team ID and it plans your week from FPL's public data: transfers, lineup, captain, and when to play each chip. There's no login and it never touches your account; it shows the moves and you make them. The Plan screen draws them on a tactics board against your mini-league rival.",
+    stops: [
+      'Expected points from minutes, xG/xA, defensive contributions, and opponent-adjusted team ratings, backtested walk-forward',
+      'A mixed-integer program picks squad, XI, and captain for every gameweek, and gives every chip its own week before it expires',
+      "Mini-league view: rivals' captains and chips, and effective ownership that counts captains double",
+    ],
+    stack: ['Python', 'PuLP', 'pandas', 'FastAPI', 'Next.js'],
+    link: { href: 'https://github.com/sujitmandava/fpl-agent-ai', text: 'Source' },
+  },
+  {
+    id: 'safewatch',
+    letter: 'S',
+    name: 'SafeWatch',
+    status: 'MVP',
+    tag: 'Faster response to safety events in nursing homes.',
+    body: "In a short-staffed nursing home, a resident's fall can go unnoticed for too long. SafeWatch puts falls and sensor alerts into one triage queue and won't let them sit: every alert starts a countdown, and if nobody acknowledges it, it escalates from CNA to charge nurse to administrator.",
+    stops: [
+      'SLA countdowns and role-based escalation, so no alert depends on one person noticing it',
+      'An immutable audit trail of every state change: who was alerted, who acknowledged, and when',
+      'Takes events from an API, a UI simulator, or recorded JSON replays',
+    ],
+    stack: ['FastAPI', 'SQLAlchemy', 'PostgreSQL', 'React', 'Docker'],
+  },
+];
+
+const projects = [
+  { letter: 'T', name: 'Trace AI', kind: 'LLM systems', text: 'A compliance copilot that grades contract checklists with citations. A deterministic decision policy sits on top of the LLM, every run produces an auditable report, and a regression eval harness tracks quality.', stack: 'OpenAI · FAISS · FastAPI', href: 'https://github.com/sujitmandava/trace-ai' },
+  { letter: 'C', name: 'Chronicle', kind: 'LLM systems', text: 'A staleness-aware RAG service. Retrieval scores decay with document age, answers warn when their context is stale, and only changed chunks get re-embedded.', stack: 'FastAPI · SQLite · Grafana', href: 'https://github.com/sujitmandava/chronicle' },
+  { letter: 'Q', name: 'CME Trading Challenge Research Agent', kind: 'Quant', text: 'An always-on LLM research desk that never trades itself. Code enforces every stop and risk limit, Claude writes the daily plans and reviews, and exits trigger Discord alerts and phone calls.', stack: 'Claude API · Discord · Twilio' },
+  { letter: 'P', name: 'AI Egress Proxy', kind: 'AI governance', text: 'An HTTP/HTTPS proxy in Go with TLS MITM and HTTP/2. It logs traffic to AI domains, redacts sensitive data by policy, and hot-reloads that policy without restarting.', stack: 'Go · TLS · DLP' },
+  { letter: 'E', name: 'Edge ML', kind: 'ML', text: 'INT8 post-training quantization of MobileNet with TensorFlow Lite: 7.3× smaller (19.9 → 2.7 MB) while top-1 accuracy moved from 37.5% to 36.0%.', stack: 'TensorFlow · TFLite', href: 'https://github.com/sujitmandava/edge_ml' },
+  { letter: 'V', name: 'Cellar', kind: 'Product · paused', text: 'A wine-ranking app that replaces the 100-point scale with head-to-head comparisons: binary-search placement in at most five taps, and Claude-vision label scanning against a 118k-wine catalog.', stack: 'Next.js · PostgreSQL · Claude API', paused: true },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sujit Mandava · Applied AI engineer</title>
+  <meta name="description" content="Sujit Mandava, applied AI engineer: measured ML results at Relativity, and three self-built products: Wren, an FPL planner, and SafeWatch. Open to roles from December 2026." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <script is:inline>
+    try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="band" id="top">
+    <div class="band__inner">
+      <a class="band__name" href="#top">Sujit Mandava</a>
+      <nav class="band__nav" aria-label="Sections">
+        <a href="#line"><Bullet letter="L" route="career" size="sm" /><span>The line</span></a>
+        <a href="#wren"><Bullet letter="W" route="wren" size="sm" /><span>Wren</span></a>
+        <a href="#fpl"><Bullet letter="F" route="fpl" size="sm" /><span>FPL</span></a>
+        <a href="#safewatch"><Bullet letter="S" route="safewatch" size="sm" /><span>SafeWatch</span></a>
+        <a href="#projects"><Bullet letter="+" route="other" size="sm" /><span>Projects</span></a>
+      </nav>
+      <button class="theme" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/></svg>
+      </button>
+      <a class="band__cta" href={`mailto:${email}`}>Get in touch</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <h1 id="hero-title">I measure every change and ship whole products.</h1>
+        <p class="hero__lede">
+          I'm an applied AI engineer. At Relativity I more than doubled evidence recall on 47K legal documents, at 4% of the cost of brute-force LLM review.
+          On my own I build Wren, an FPL planner, and SafeWatch, from schema to shipped app.
+        </p>
+        <div class="actions">
+          <a class="btn btn--solid" href={`mailto:${email}`}>Get in touch</a>
+          <a class="btn btn--line" href="/resume.pdf">Résumé <span class="sr">(PDF)</span></a>
+        </div>
+        <p class="hero__status">Open to AI/ML roles from December 2026 · M.S. AI, Northwestern · Evanston, IL</p>
+      </div>
+
+      <nav class="strip" aria-label="Career so far">
+        <ol>
+          {stops.map((s) => (
+            <li><a href={s.href}><span class="strip__dot"></span><span class="strip__name">{s.name}</span><span class="strip__note">{s.note}</span></a></li>
+          ))}
+          <li class="strip__end"><a href="#terminal"><span class="strip__dot"></span><span class="strip__name">Your team</span><span class="strip__note">From December 2026</span></a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <section class="line" id="line" aria-labelledby="line-title">
+      <div class="sign">
+        <Bullet letter="L" route="career" size="lg" />
+        <h2 id="line-title">The line so far</h2>
+      </div>
+
+      <ol class="trunk">
+        <li class="stop" id="iit">
+          <div class="stop__head">
+            <span class="plaque"><img src="/images/school-2.png" alt="IIT Palakkad logo" width="451" height="443" loading="lazy" /></span>
+            <div>
+              <h3>Indian Institute of Technology Palakkad</h3>
+              <p class="stop__meta">Bachelor of Technology, Computer Science &amp; Engineering · Oct 2020 – Jul 2024</p>
+            </div>
+          </div>
+          <p class="stop__body">Captained the basketball club, grew it from 8 to 65+ members, and founded the institute's first women's team.</p>
+        </li>
+
+        <li class="stop" id="hgrid">
+          <div class="stop__head">
+            <span class="plaque"><img src="/images/hgrid.svg" alt="hGrid logo" width="200" height="200" loading="lazy" /></span>
+            <div>
+              <h3>Software Engineer, hGrid (Mahathi Software)</h3>
+              <p class="stop__meta">Dec 2024 – Aug 2025</p>
+            </div>
+          </div>
+          <ul class="stop__list">
+            <li>Owned the full-stack architecture of three production products (CareTab, SunPay, and Docuracy), designed from a blank slate on Amazon RDS</li>
+            <li>Built deployment, observability, and monitoring pipelines from scratch, so incidents surfaced as dashboard alerts instead of user reports</li>
+            <li>Moved CareTab's scheduled and long-running jobs onto Celery workers, keeping API latency stable under load</li>
+          </ul>
+          <p class="stack">Django · Celery · AWS · Docker · nginx · Grafana / Loki</p>
+        </li>
+
+        <li class="stop" id="northwestern">
+          <div class="stop__head">
+            <span class="plaque"><img src="/images/school-1.jpg" alt="Northwestern University logo" width="400" height="251" loading="lazy" /></span>
+            <div>
+              <h3>Northwestern University</h3>
+              <p class="stop__meta">Master of Science in Artificial Intelligence · Sep 2025 – Dec 2026 · Evanston, IL</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="stop stop--major" id="relativity">
+          <div class="stop__head">
+            <span class="plaque"><img src="/images/relativity.png" alt="Relativity logo" width="419" height="477" loading="lazy" /></span>
+            <div>
+              <h3>Applied Scientist Intern, Relativity</h3>
+              <p class="stop__meta">Jun 2026 – Aug 2026</p>
+            </div>
+          </div>
+          <p class="stop__body">
+            Built an agentic system that surfaces supporting evidence for legal claims across a 47K-document OCR'd corpus.
+            It combines hybrid RAG and agentic retrieval with an LLM judge that ranks candidate evidence, and reviewer
+            feedback flows back in through GEPA-optimized ranking prompts.
+          </p>
+          <dl class="figures">
+            <div><dt>Evidence recall, top 1,000</dt><dd><span>0.30</span><span class="arrow"><Arrow size={56} /><span class="sr"> to </span></span><span>0.68</span></dd><p>More than double the claim-anchored baseline</p></div>
+            <div><dt>Supporting citations</dt><dd><span>+62%</span></dd><p>Including 13 that expert review confirmed the original filing missed</p></div>
+            <div><dt>Cost per claim</dt><dd><span>$17</span></dd><p>vs. $400 for exhaustive LLM review, keeping 80% of its recall</p></div>
+          </dl>
+          <p class="stack">Hybrid RAG · Agentic retrieval · RRF fusion · LLM-as-judge · DSPy / GEPA</p>
+        </li>
+
+        <li class="stop stop--end">
+          <div class="stop__head">
+            <div>
+              <h3>Your team</h3>
+              <p class="stop__meta">From December 2026</p>
+            </div>
+          </div>
+          <p class="stop__body">Next stop. <a class="textlink" href="#terminal">See how to reach me <Arrow dir="down" size={16} /></a></p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="routes" aria-labelledby="routes-title">
+      <div class="sign">
+        <span class="cluster"><Bullet letter="W" route="wren" size="lg" /><Bullet letter="F" route="fpl" size="lg" /><Bullet letter="S" route="safewatch" size="lg" /></span>
+        <h2 id="routes-title">Products I'm building</h2>
+      </div>
+      <p class="routes__sub">Three products I'm taking from problem to shipped app, on my own.</p>
+
+      {products.map((p) => (
+        <article class="route" id={p.id} data-route={p.id} aria-labelledby={`${p.id}-title`}>
+          <header class="route__sign">
+            <Bullet letter={p.letter} route={p.id as any} size="lg" />
+            <div class="route__titles">
+              <h3 id={`${p.id}-title`}>{p.name}</h3>
+              <p>{p.tag}</p>
+            </div>
+            <span class="route__status">{p.status}</span>
+          </header>
+
+          <div class:list={['route__body', { 'route__body--media': p.video }]}>
+            <div class="route__text">
+              <p>{p.body}</p>
+              <ol class="route__stops" aria-label={`What ${p.name} does`}>
+                {p.stops.map((s) => <li>{s}</li>)}
+              </ol>
+              <p class="stack">{p.stack.join(' · ')}</p>
+              {p.link && <a class="textlink" href={p.link.href}>{p.link.text} <Arrow dir="up-right" size={16} /></a>}
+            </div>
+
+            {p.video && (
+              <figure class="film" data-film>
+                <video muted playsinline loop preload="none" poster={p.video.poster} aria-label={p.video.label}>
+                  <source src={p.video.src} type="video/mp4" />
+                </video>
+                <figcaption>
+                  <button type="button" class="film__btn" data-film-play aria-pressed="false">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="i-play" d="M8 5v14l11-7z" fill="currentColor"/><path class="i-pause" d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg>
+                    <span>Play</span>
+                  </button>
+                  <button type="button" class="film__btn" data-film-sound aria-pressed="false">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="i-on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="i-off" d="M16.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    <span>Sound off</span>
+                  </button>
+                  <span class="film__credit">Music: Sascha Ende, CC BY 4.0</span>
+                </figcaption>
+              </figure>
+            )}
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <section class="others" id="projects" aria-labelledby="projects-title">
+      <div class="sign">
+        <Bullet letter="+" route="other" size="lg" />
+        <h2 id="projects-title">Other lines</h2>
+      </div>
+      <p class="others__sub">Smaller builds where I go deep on one idea.</p>
+      <ul class="board">
+        {projects.map((x) => (
+          <li class:list={['board__row', { 'is-paused': x.paused }]}>
+            <Bullet letter={x.letter} route="other" size="md" />
+            <div class="board__main">
+              <h3>{x.name}</h3>
+              <p>{x.text}</p>
+            </div>
+            <p class="board__kind">{x.kind}</p>
+            <p class="board__stack">{x.stack}</p>
+            <p class="board__link">
+              {x.href ? <a class="textlink" href={x.href}>Source <Arrow dir="up-right" size={16} /><span class="sr"> for {x.name}</span></a>
+                : x.paused ? <span class="muted">Not running</span>
+                : <span class="muted">Private repo</span>}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="about" aria-labelledby="about-title">
+      <h2 id="about-title">Good engineering starts with a good question.</h2>
+      <div class="about__cols">
+        <div class="about__text">
+          <p>I started as a full-stack engineer, owning three production products end to end, and moved into ML because I wanted to build the parts of products that think, not just the plumbing around them.</p>
+          <p>I'm most useful where machine learning meets real users: retrieval that finds the evidence that matters, agents whose decisions can be checked, and evaluation that shows whether a change helped. I'd rather argue about the metric up front than ship something nobody can measure, and I like making systems better and cheaper at the same time.</p>
+          <p>Building my own products keeps me honest about what users want. Off the keyboard I'm on a basketball court.</p>
+        </div>
+        <ul class="rules">
+          <li><strong>Question the brief.</strong> Who is this for, and what would prove it worked?</li>
+          <li><strong>Measure, don't guess.</strong> Every change ships with an eval, so "better" is a number.</li>
+          <li><strong>Own it end to end.</strong> Schema, model, UI, and the dashboard that tells me it broke.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="terminal" id="terminal" aria-labelledby="terminal-title">
+      <div class="terminal__inner">
+        <span class="terminal__dot" aria-hidden="true"></span>
+        <div>
+          <h2 id="terminal-title">Last stop: your team. I can start in December.</h2>
+          <p class="terminal__text">Hiring for applied AI? I'm looking for AI/ML engineering roles where I own the problem, not just the model: figuring out what to build, shipping it, and measuring whether it worked.</p>
+          <div class="actions">
+            <a class="btn btn--light" href={`mailto:${email}`}>Email me</a>
+            <a class="btn btn--ghost" href="/resume.pdf">Résumé</a>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/in/sujit-mandava">LinkedIn</a>
+            <a class="btn btn--ghost" href="https://github.com/sujitmandava">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>© 2026 Sujit Mandava</p>
+    <a class="textlink" href="#top">Back to the top <Arrow dir="up" size={16} /></a>
+  </footer>
+
+  <script>
+    // Theme toggle, remembered across visits.
+    const root = document.documentElement;
+    const btn = document.querySelector<HTMLButtonElement>('.theme')!;
+    const isDark = () => root.dataset.theme === 'dark' || (!root.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+    const sync = () => {
+      btn.setAttribute('aria-pressed', String(isDark()));
+      btn.setAttribute('aria-label', isDark() ? 'Switch to light mode' : 'Switch to dark mode');
+    };
+    btn.addEventListener('click', () => {
+      const next = isDark() ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      sync();
+    });
+    sync();
+
+    // Product films: play muted when on screen (unless reduced motion), with explicit play and sound controls.
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll<HTMLElement>('[data-film]').forEach((fig) => {
+      const v = fig.querySelector('video')!;
+      const play = fig.querySelector<HTMLButtonElement>('[data-film-play]')!;
+      const sound = fig.querySelector<HTMLButtonElement>('[data-film-sound]')!;
+      let userPaused = false;
+      const syncBtns = () => {
+        const on = !v.paused;
+        play.setAttribute('aria-pressed', String(on));
+        play.querySelector('span')!.textContent = on ? 'Pause' : 'Play';
+        sound.setAttribute('aria-pressed', String(!v.muted));
+        sound.querySelector('span')!.textContent = v.muted ? 'Sound off' : 'Sound on';
+        fig.classList.toggle('is-playing', on);
+        fig.classList.toggle('is-sound', !v.muted);
+      };
+      v.addEventListener('play', syncBtns);
+      v.addEventListener('pause', syncBtns);
+      v.addEventListener('volumechange', syncBtns);
+      play.addEventListener('click', () => {
+        if (v.paused) { userPaused = false; v.play().catch(() => {}); }
+        else { userPaused = true; v.pause(); }
+      });
+      sound.addEventListener('click', () => {
+        v.muted = !v.muted;
+        if (!v.muted && v.paused) v.play().catch(() => {});
+      });
+      if (!reduce && 'IntersectionObserver' in window) {
+        new IntersectionObserver(([e]) => {
+          if (e.isIntersecting && !userPaused) v.play().catch(() => {});
+          else if (!e.isIntersecting && !v.paused) v.pause();
+        }, { threshold: 0.4 }).observe(v);
+      }
+      syncBtns();
+    });
+  </script>
+</body>
+</html>

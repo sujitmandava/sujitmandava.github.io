@@ -1,0 +1,11 @@
+---
+// A transit route bullet: a filled disc carrying one letter.
+interface Props {
+  letter: string;
+  route: 'career' | 'wren' | 'fpl' | 'safewatch' | 'other';
+  size?: 'sm' | 'md' | 'lg';
+  label?: string;
+}
+const { letter, route, size = 'md', label } = Astro.props;
+---
+<span class:list={['bullet', `bullet--${size}`]} data-route={route} aria-label={label} aria-hidden={label ? undefined : 'true'} role={label ? 'img' : undefined}>{letter}</span>
