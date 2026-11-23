@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-23T18:42:17+00:00",
+  "generatedAt": "2026-11-23T20:04:48+00:00",
   "title": "Design System: Sujit Mandava",
   "extensions": {
     "colorMeta": {
@@ -426,6 +426,11 @@
         "name": "film-autoplay",
         "value": "IntersectionObserver threshold 0.4, muted",
         "purpose": "Films play in view only, never under reduced motion; explicit Play and Sound controls."
+      },
+      {
+        "name": "theme-crossfade",
+        "value": "::view-transition-old/new(root) 450ms cubic-bezier(0.4, 0, 0.2, 1); toggle svg rotate(180deg) 450ms ease-out",
+        "purpose": "The theme switch: the page crossfades between themes and the toggle's half-disc turns over; instant under reduced motion or without View Transitions."
       }
     ],
     "breakpoints": [
@@ -531,8 +536,8 @@
       "kind": "nav",
       "refersTo": "signage-band",
       "description": "Sticky black band: name, route bullets as nav, round theme toggle, white CTA plate.",
-      "html": "<header class=\"ds-band\"><a class=\"ds-band-name\" href=\"#\">Sujit Mandava</a><nav class=\"ds-band-nav\"><a href=\"#\"><span class=\"ds-b\" style=\"background:#e0582a;color:#111\">L</span><span>The line</span></a><a href=\"#\"><span class=\"ds-b\" style=\"background:#5a4a8c\">W</span><span>Wren</span></a></nav><a class=\"ds-band-cta\" href=\"#\">Get in touch</a></header>",
-      "css": ".ds-band { position: relative; display: flex; align-items: center; gap: 24px; height: 68px; padding: 0 24px 8px; background: var(--band, #111111); color: var(--band-ink, #ffffff); font-family: \"Archivo\", \"Helvetica Neue\", Arial, sans-serif; } .ds-band::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: 6px; height: 2px; background: var(--band-ink, #ffffff); } .ds-band-name { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; text-decoration: none; color: inherit; margin-right: auto; } .ds-band-nav { display: flex; gap: 18px; } .ds-band-nav a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; color: var(--band-ink-2, #c8c8c8); } .ds-band-nav a:hover { color: var(--band-ink, #ffffff); } .ds-band-nav a:hover span:not(.ds-b) { text-decoration: underline; } .ds-b { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 1.1rem; line-height: 1; } .ds-band-cta { background: var(--band-ink, #ffffff); color: var(--band, #111111); padding: 10px 16px; font-weight: 700; text-decoration: none; } .ds-band-cta:hover { background: var(--career, #e0582a); color: #111; } .ds-band a:focus-visible { outline: 3px solid var(--career, #e0582a); outline-offset: 3px; }"
+      "html": "<header class=\"ds-band\"><a class=\"ds-band-name\" href=\"#\">Sujit Mandava</a><nav class=\"ds-band-nav\"><a href=\"#\"><span class=\"ds-b\" style=\"background:#e0582a;color:#111\">L</span><span>The line</span></a><a href=\"#\"><span class=\"ds-b\" style=\"background:#5a4a8c\">W</span><span>Wren</span></a></nav><button class=\"ds-theme\" type=\"button\" aria-pressed=\"false\" aria-label=\"Switch to dark mode\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M12 3.5a8.5 8.5 0 0 1 0 17z\" fill=\"currentColor\"/></svg></button><a class=\"ds-band-cta\" href=\"#\">Get in touch</a></header>",
+      "css": ".ds-band { position: relative; display: flex; align-items: center; gap: 24px; height: 68px; padding: 0 24px 8px; background: var(--band, #111111); color: var(--band-ink, #ffffff); font-family: \"Archivo\", \"Helvetica Neue\", Arial, sans-serif; } .ds-band::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: 6px; height: 2px; background: var(--band-ink, #ffffff); } .ds-band-name { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; text-decoration: none; color: inherit; margin-right: auto; } .ds-band-nav { display: flex; gap: 18px; } .ds-band-nav a { display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; color: var(--band-ink-2, #c8c8c8); } .ds-band-nav a:hover { color: var(--band-ink, #ffffff); } .ds-band-nav a:hover span:not(.ds-b) { text-decoration: underline; } .ds-b { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; color: #fff; font-weight: 800; font-size: 1.1rem; line-height: 1; } .ds-band-cta { background: var(--band-ink, #ffffff); color: var(--band, #111111); padding: 10px 16px; font-weight: 700; text-decoration: none; } .ds-band-cta:hover { background: var(--career, #e0582a); color: #111; } .ds-band a:focus-visible { outline: 3px solid var(--career, #e0582a); outline-offset: 3px; } .ds-theme { display: grid; place-items: center; width: 40px; height: 40px; border: 2px solid var(--band-ink-2, #c8c8c8); border-radius: 50%; background: transparent; color: var(--band-ink, #ffffff); cursor: pointer; } .ds-theme:hover { border-color: var(--band-ink, #ffffff); } .ds-theme:focus-visible { outline: 3px solid var(--career, #e0582a); outline-offset: 3px; } .ds-theme svg { transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-theme[aria-pressed=\"true\"] svg { transform: rotate(180deg); } @media (prefers-reduced-motion: reduce) { .ds-theme svg { transition: none; } }"
     },
     {
       "name": "Route Sign",
@@ -584,7 +589,7 @@
       "Two shapes only: square-cornered rectangles and full circles.",
       "Lines are literal: strip diagrams, trunk tracks and route stops are drawn bars and ringed dots.",
       "Career orange is both the trunk line and the only interaction colour.",
-      "One authored motion: the trunk line fills as it scrolls through view."
+      "One authored motion: the trunk line fills as it scrolls through view. The theme toggle is the one exception: switching themes crossfades the page over 450ms (View Transitions) while the toggle's half-disc turns 180°, and snaps under reduced motion."
     ],
     "rules": [
       {
