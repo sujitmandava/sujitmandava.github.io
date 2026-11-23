@@ -84,7 +84,7 @@ rounded:
   full: "50%"
 spacing:
   gutter: "clamp(16px, 4.5vw, 72px)"
-  max: "1320px"
+  max: "1520px"
   band-h: "68px"
   rule: "6px"
   section-top: "clamp(80px, 12vw, 152px)"
@@ -264,11 +264,11 @@ A signage palette: black, white and route colours, each route colour standing fo
 
 ## Layout
 
-A centred frame of 1320px with a fluid gutter (clamp(16px, 4.5vw, 72px)). A sticky 68px signage band sits on top; anchor scrolling pads by the band height plus 16px. Sections open clamp(80px, 12vw, 152px) below the previous one and start with a sign: a large bullet (or a cluster of bullets) beside the headline, underlined by a 6px ink rule.
+A centred frame of 1520px with a fluid gutter (clamp(16px, 4.5vw, 72px)). A sticky 68px signage band sits on top; anchor scrolling pads by the band height plus 16px. Sections open clamp(80px, 12vw, 152px) below the previous one and start with a sign: a large bullet (or a cluster of bullets) beside the headline, underlined by a 6px ink rule.
 
-The hero is a two-column grid: copy on the left, and a Platform Grey panel on the right (clamp(320px, 30vw, 440px), bleeding to the viewport edge) holding a vertical strip diagram. Below 860px it stacks and the strip diagram turns horizontal, keeping only the first and last stop names.
+The hero is a two-column grid: copy on the left, and a Platform Grey panel on the right (clamp(320px, 30vw, 440px), bleeding to the viewport edge) holding the portrait above a vertical strip diagram. Below 860px it stacks and the strip diagram turns horizontal, keeping only the first and last stop names.
 
-Lines change orientation with the viewport rather than disappearing: route-stop diagrams run horizontally in three columns when a route has no film, and vertically beside text otherwise or on phones. Route bodies with film split 5:7 (text:film) and stack below 960px with the film first. The departures board is a five-column grid (bullet, name and text, kind, stack, link) that collapses to two columns below 960px. The hero copy ends in a byline: the portrait beside the status line. Breakpoints in use: 400, 560, 600, 640, 760, 860, 960, 980, 1060px.
+Lines change orientation with the viewport rather than disappearing: route-stop diagrams run horizontally in three columns when a route has no film, and vertically beside text otherwise or on phones. Route bodies with film split 5:7 (text:film) and stack below 960px with the film first. The departures board is a five-column grid (bullet, name and text, kind, stack, link) that collapses to two columns below 960px. The hero fills the viewport below the band; the Platform Grey panel holds the portrait above the strip diagram. Breakpoints in use: 400, 560, 600, 640, 760, 860, 960, 980, 1060px.
 
 ## Elevation & Depth
 
@@ -316,7 +316,7 @@ Smaller projects as rows under a 6px top rule, each divided by a 2px ink line: m
 16:9 video in a 3px ink frame on Platform Grey, muted, looping and autoplaying only in view (never under reduced motion), with explicit Play/Pause and Sound buttons (44px, 2px ink stroke, ink fill on hover) and a right-aligned credit line.
 
 ### Portrait
-The one photograph on the page sits in the hero byline, beside the status line, small enough that the headline and proof still lead: a square crop at clamp(72px, 7vw, 96px), object-fit cover, framed with the same 2px ink border as the logo plaques, flat on the ground with no radius or shadow.
+The one photograph on the page sits at the top of the hero's Platform Grey panel, above the strip diagram (120px on phones, above the horizontal strip): a square crop at clamp(150px, 12vw, 200px), object-fit cover, framed with the same 2px ink border as the logo plaques, flat on the ground with no radius or shadow.
 
 ### Terminal Block
 The last stop: a full-width black band with a large orange disc ringed in Band White, the terminal headline, a Band Silver paragraph and Light/Ghost buttons.

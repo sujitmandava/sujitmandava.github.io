@@ -117,12 +117,11 @@ const projects = [
           <a class="btn btn--solid" href={`mailto:${email}`}>Get in touch</a>
           <a class="btn btn--line" href="/resume.pdf">Résumé <span class="sr">(PDF)</span></a>
         </div>
-        <div class="byline">
-          <img class="portrait" src="/images/portrait.webp" alt="Sujit Mandava" width="480" height="480" decoding="async" fetchpriority="high" />
-          <p class="hero__status">Open to AI/ML roles from December 2026 · M.S. AI, Northwestern · Evanston, IL</p>
-        </div>
+        <p class="hero__status">Open to AI/ML roles from December 2026 · M.S. AI, Northwestern · Evanston, IL</p>
       </div>
 
+      <div class="hero__side">
+      <img class="portrait" src="/images/portrait.webp" alt="Sujit Mandava" width="480" height="480" decoding="async" fetchpriority="high" />
       <nav class="strip" aria-label="Career so far">
         <ol>
           {stops.map((s) => (
@@ -131,6 +130,7 @@ const projects = [
           <li class="strip__end"><a href="#terminal"><span class="strip__dot"></span><span class="strip__name">Your team</span><span class="strip__note">From December 2026</span></a></li>
         </ol>
       </nav>
+      </div>
     </section>
 
     <section class="line" id="line" aria-labelledby="line-title">

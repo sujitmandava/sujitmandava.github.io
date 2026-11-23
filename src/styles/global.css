@@ -37,7 +37,7 @@
   --bullet-other: #67686b;
 
   --gutter: clamp(16px, 4.5vw, 72px);
-  --max: 1320px;
+  --max: 1520px;
   --band-h: 68px;
   --rule: 6px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -192,7 +192,7 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
   --edge: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter)));
   display: grid;
   grid-template-columns: minmax(0, 1fr) calc(clamp(320px, 30vw, 440px) + var(--edge) - var(--gutter));
-  min-height: min(calc(100svh - var(--band-h)), 860px);
+  min-height: calc(100svh - var(--band-h));
 }
 .hero__copy {
   padding: clamp(48px, 8vh, 104px) var(--gutter) clamp(48px, 7vh, 88px) var(--edge);
@@ -208,19 +208,21 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 .hero__lede { font-size: clamp(1.15rem, 1.6vw, 1.4rem); line-height: 1.45; color: var(--ink-2); max-width: 54ch; }
 .hero__status { font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 10px; }
 .hero__status::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--career); flex: none; }
-.byline { display: flex; align-items: center; gap: clamp(16px, 2vw, 24px); }
-.byline .hero__status { align-items: baseline; max-width: 44ch; }
-.byline .hero__status::before { transform: translateY(1px); }
+.hero__side {
+  background: var(--panel);
+  padding: clamp(40px, 8vh, 96px) var(--edge) clamp(40px, 8vh, 96px) clamp(24px, 3vw, 44px);
+  display: flex; flex-direction: column; justify-content: center; gap: clamp(32px, 5vh, 56px);
+}
 .portrait {
   flex: none;
-  width: clamp(72px, 7vw, 96px); height: auto; aspect-ratio: 1;
+  width: clamp(150px, 12vw, 200px); height: auto; aspect-ratio: 1;
   object-fit: cover;
   border: 2px solid var(--ink);
   background: var(--panel);
 }
 
 /* Career strip diagram */
-.strip { background: var(--panel); padding: clamp(40px, 8vh, 96px) var(--edge) clamp(40px, 8vh, 96px) clamp(24px, 3vw, 44px); display: flex; align-items: center; }
+.strip { display: flex; align-items: center; }
 .strip ol { position: relative; width: 100%; display: grid; gap: clamp(22px, 4.2vh, 44px); }
 .strip ol::before {
   content: ""; position: absolute;
@@ -241,7 +243,6 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 .strip__end .strip__dot { background: var(--career); border-color: var(--career); }
 
 @media (max-width: 860px) {
-  .strip { padding: 28px var(--gutter) 24px; }
   .strip ol { grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0; }
   .strip ol::before { left: 18px; right: 18px; top: 11px; bottom: auto; width: auto; height: 10px; }
   .strip a { grid-template-columns: 1fr; justify-items: center; text-align: center; row-gap: 8px; }
@@ -254,7 +255,8 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; min-height: 0; }
   .hero__copy { padding-left: var(--gutter); }
-  .strip { padding: 36px var(--gutter); }
+  .hero__side { padding: 36px var(--gutter); gap: 28px; }
+  .portrait { width: 120px; }
 }
 
 /* ---------- Section frame ---------- */
