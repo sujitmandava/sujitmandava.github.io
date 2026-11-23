@@ -109,14 +109,18 @@ const projects = [
       <div class="hero__copy">
         <h1 id="hero-title">I measure every change and ship whole products.</h1>
         <p class="hero__lede">
-          I'm an applied AI engineer. At Relativity I more than doubled evidence recall on 47K legal documents, at 4% of the cost of brute-force LLM review.
+          I started as a full-stack engineer and moved into ML to build the parts of products that think.
+          At Relativity I more than doubled evidence recall on 47K legal documents, at 4% of the cost of brute-force LLM review.
           On my own I build Wren, an FPL planner, and SafeWatch, from schema to shipped app.
         </p>
         <div class="actions">
           <a class="btn btn--solid" href={`mailto:${email}`}>Get in touch</a>
           <a class="btn btn--line" href="/resume.pdf">Résumé <span class="sr">(PDF)</span></a>
         </div>
-        <p class="hero__status">Open to AI/ML roles from December 2026 · M.S. AI, Northwestern · Evanston, IL</p>
+        <div class="byline">
+          <img class="portrait" src="/images/portrait.webp" alt="Sujit Mandava" width="480" height="480" decoding="async" fetchpriority="high" />
+          <p class="hero__status">Open to AI/ML roles from December 2026 · M.S. AI, Northwestern · Evanston, IL</p>
+        </div>
       </div>
 
       <nav class="strip" aria-label="Career so far">
@@ -144,7 +148,7 @@ const projects = [
               <p class="stop__meta">Bachelor of Technology, Computer Science &amp; Engineering · Oct 2020 – Jul 2024</p>
             </div>
           </div>
-          <p class="stop__body">Captained the basketball club, grew it from 8 to 65+ members, and founded the institute's first women's team.</p>
+          <p class="stop__body">Captained the basketball club, grew it from 8 to 65+ members, and founded the institute's first women's team. Off the keyboard I'm still on a court.</p>
         </li>
 
         <li class="stop" id="hgrid">
@@ -281,25 +285,6 @@ const projects = [
           </li>
         ))}
       </ul>
-    </section>
-
-    <section class="about" aria-labelledby="about-title">
-      <div class="about__head">
-        <img class="portrait" src="/images/portrait.webp" alt="Sujit Mandava" width="480" height="480" loading="lazy" decoding="async" />
-        <h2 id="about-title">Good engineering starts with a good question.</h2>
-      </div>
-      <div class="about__cols">
-        <div class="about__text">
-          <p>I started as a full-stack engineer, owning three production products end to end, and moved into ML because I wanted to build the parts of products that think, not just the plumbing around them.</p>
-          <p>I'm most useful where machine learning meets real users: retrieval that finds the evidence that matters, agents whose decisions can be checked, and evaluation that shows whether a change helped. I'd rather argue about the metric up front than ship something nobody can measure, and I like making systems better and cheaper at the same time.</p>
-          <p>Building my own products keeps me honest about what users want. Off the keyboard I'm on a basketball court.</p>
-        </div>
-        <ul class="rules">
-          <li><strong>Question the brief.</strong> Who is this for, and what would prove it worked?</li>
-          <li><strong>Measure, don't guess.</strong> Every change ships with an eval, so "better" is a number.</li>
-          <li><strong>Own it end to end.</strong> Schema, model, UI, and the dashboard that tells me it broke.</li>
-        </ul>
-      </div>
     </section>
 
     <section class="terminal" id="terminal" aria-labelledby="terminal-title">

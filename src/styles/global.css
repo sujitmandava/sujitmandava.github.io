@@ -208,6 +208,16 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 .hero__lede { font-size: clamp(1.15rem, 1.6vw, 1.4rem); line-height: 1.45; color: var(--ink-2); max-width: 54ch; }
 .hero__status { font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 10px; }
 .hero__status::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--career); flex: none; }
+.byline { display: flex; align-items: center; gap: clamp(16px, 2vw, 24px); }
+.byline .hero__status { align-items: baseline; max-width: 44ch; }
+.byline .hero__status::before { transform: translateY(1px); }
+.portrait {
+  flex: none;
+  width: clamp(72px, 7vw, 96px); height: auto; aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+  background: var(--panel);
+}
 
 /* Career strip diagram */
 .strip { background: var(--panel); padding: clamp(40px, 8vh, 96px) var(--edge) clamp(40px, 8vh, 96px) clamp(24px, 3vw, 44px); display: flex; align-items: center; }
@@ -248,13 +258,13 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 }
 
 /* ---------- Section frame ---------- */
-.line, .routes, .others, .about {
+.line, .routes, .others {
   max-width: var(--max);
   margin: 0 auto;
   padding: clamp(80px, 12vw, 152px) var(--gutter) 0;
 }
 .sign { display: flex; align-items: center; gap: clamp(16px, 2vw, 24px); padding-bottom: 20px; border-bottom: var(--rule) solid var(--ink); }
-.sign h2, .about h2 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.03em; }
+.sign h2 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.03em; }
 
 /* ---------- The trunk line ---------- */
 .trunk { position: relative; margin-top: clamp(40px, 6vw, 72px); --x: clamp(18px, 2.4vw, 30px); }
@@ -414,24 +424,6 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
   .board__row { grid-template-columns: 44px minmax(0, 1fr); row-gap: 8px; }
   .board__kind, .board__stack, .board__link { grid-column: 2; text-align: left; padding-top: 0; }
 }
-
-/* ---------- About ---------- */
-.about h2 { max-width: 18ch; }
-.about__head { display: flex; align-items: center; gap: clamp(20px, 3.5vw, 48px); }
-.portrait {
-  flex: none;
-  width: clamp(112px, 15vw, 200px); height: auto; aspect-ratio: 1;
-  object-fit: cover;
-  border: 2px solid var(--ink);
-  background: var(--panel);
-}
-@media (max-width: 560px) { .about__head { flex-direction: column; align-items: flex-start; } }
-.about__cols { margin-top: clamp(32px, 4vw, 56px); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 80px); }
-.about__text { display: grid; gap: 20px; max-width: 66ch; }
-.rules { display: grid; gap: 28px; align-content: start; }
-.rules li { border-top: var(--rule) solid var(--ink); padding-top: 14px; color: var(--ink-2); }
-.rules strong { display: block; color: var(--ink); font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px; }
-@media (max-width: 860px) { .about__cols { grid-template-columns: 1fr; } }
 
 /* ---------- Terminal stop ---------- */
 .terminal { margin-top: clamp(96px, 14vw, 176px); background: var(--band); color: var(--band-ink); }

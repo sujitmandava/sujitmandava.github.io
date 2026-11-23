@@ -35,7 +35,7 @@ Few candidates can show both research-grade measurement and products they built 
 
 ## Capabilities and Constraints
 
-- Sections today: hero, about, education, experience, featured products, more projects, contact. A redesign may restructure them but must keep their facts.
+- Sections today: hero (with the about story and portrait folded in), education, experience, featured products, more projects, contact. A redesign may restructure them but must keep their facts.
 - **Featured products** (in order): Wren, FPL Agent AI (now a personal FPL planner), SafeWatch.
 - **Cellar is demoted** to the project grid as paused, because the app is currently broken. Don't show its screenshots or link to it as live.
 - **Product videos:** each featured product gets a short loop made with the brag skill, shown muted in the card, with a poster frame, lazy loading, and a still image under `prefers-reduced-motion`. A full-length version with sound can be linked. Only Wren's exists so far; the others will be generated.
@@ -57,7 +57,7 @@ Few candidates can show both research-grade measurement and products they built 
 - **Wren:** brag video at `~/projects/cadence/brag-output-2026-11-20-150944/brag.mp4` (1920×1080, 23.5s, 5.6 MB, with music by Sascha Ende, CC BY 4.0, which must be credited if the audio is used) plus `brag.jpg` and `share-copy.txt`.
 - **FPL Agent AI:** brag video at `~/Desktop/Projects/fpl-agent-ai/brag-output/brag.mp4` (23.7s, music by Sascha Ende; licence not stated in the brag output). Facts from `~/Desktop/Projects/fpl-agent-ai/README.md`. Planner from a team ID with no login, xPts model, MILP optimizer, chip plan, mini-league view, Next.js web app (Plan screen built; League, Squad and Players not yet). Public repo: github.com/sujitmandava/fpl-agent-ai. No public deployment URL yet.
 - **SafeWatch:** MVP, no public demo yet.
-- Images: the owner's portrait (`public/images/portrait.webp`, shown small in About, never in the hero) and school and employer logos under `public/images/`; product films and their still frames under `public/video/`.
+- Images: the owner's portrait (`public/images/portrait.webp`, shown small in the hero byline beside the status line) and school and employer logos under `public/images/`; product films and their still frames under `public/video/`.
 - **Absent, do not invent:** testimonials, user counts for any product, live product URLs, press.
 
 ## Product Principles

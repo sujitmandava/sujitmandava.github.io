@@ -249,10 +249,10 @@ A signage palette: black, white and route colours, each route colour standing fo
 ### Hierarchy
 - **Display** (800, clamp(2.9rem, 6.6vw, 6rem), 0.94, -0.035em): the hero headline only, max 13ch.
 - **Figure** (800, clamp(2.6rem, 4.6vw, 4.2rem), 1, -0.04em, tabular): results set as platform numbers, each under a 6px rule with a bold label above and a 30ch note below.
-- **Headline** (800, clamp(2.2rem, 5vw, 4rem), 1, -0.03em): section signs and the About heading. The terminal heading runs larger (clamp(2.4rem, 5.6vw, 4.8rem), 0.98).
+- **Headline** (800, clamp(2.2rem, 5vw, 4rem), 1, -0.03em): section signs. The terminal heading runs larger (clamp(2.4rem, 5.6vw, 4.8rem), 0.98).
 - **Route Title** (800, clamp(2rem, 4.4vw, 3.4rem)): product names inside route signs.
 - **Title** (800, clamp(1.45rem, 2.6vw, 2.1rem)): stop names on the trunk.
-- **Subtitle** (800, 1.35rem / 1.4rem, -0.02em): strip-diagram stop names, departures-board names, About principle heads.
+- **Subtitle** (800, 1.35rem / 1.4rem, -0.02em): strip-diagram stop names, departures-board names.
 - **Lede** (400, clamp(1.15rem, 1.6vw, 1.4rem), 1.45): the hero proof line, Worn Ink, max 54ch.
 - **Body** (400, 1.125rem, 1.55): reading text, held to 58–68ch.
 - **Label** (600–700, 0.95–1.05rem): nav, buttons, status plates, stack lines, board columns. Sentence case, never uppercase-tracked.
@@ -268,7 +268,7 @@ A centred frame of 1320px with a fluid gutter (clamp(16px, 4.5vw, 72px)). A stic
 
 The hero is a two-column grid: copy on the left, and a Platform Grey panel on the right (clamp(320px, 30vw, 440px), bleeding to the viewport edge) holding a vertical strip diagram. Below 860px it stacks and the strip diagram turns horizontal, keeping only the first and last stop names.
 
-Lines change orientation with the viewport rather than disappearing: route-stop diagrams run horizontally in three columns when a route has no film, and vertically beside text otherwise or on phones. Route bodies with film split 5:7 (text:film) and stack below 960px with the film first. The departures board is a five-column grid (bullet, name and text, kind, stack, link) that collapses to two columns below 960px. About opens with the portrait beside its headline (stacked above it below 560px), then splits 7:5. Breakpoints in use: 400, 560, 600, 640, 760, 860, 960, 980, 1060px.
+Lines change orientation with the viewport rather than disappearing: route-stop diagrams run horizontally in three columns when a route has no film, and vertically beside text otherwise or on phones. Route bodies with film split 5:7 (text:film) and stack below 960px with the film first. The departures board is a five-column grid (bullet, name and text, kind, stack, link) that collapses to two columns below 960px. The hero copy ends in a byline: the portrait beside the status line. Breakpoints in use: 400, 560, 600, 640, 760, 860, 960, 980, 1060px.
 
 ## Elevation & Depth
 
@@ -281,7 +281,7 @@ The system is flat. There are no shadows anywhere. Depth is carried by the black
 
 Two shapes only. Rectangles are square-cornered (0 radius): buttons, bands, plaques, status plates, film frames. Circles are perfect (50%): route bullets, stop dots, the theme toggle, the hero status dot, the terminal dot.
 
-Strokes are heavy and graded: 6px horizontal rules for section signs, figures, the board top and About principles; 3px for buttons, film frames and paused bullets; 2px for board row dividers, plaques, film buttons and status plates. Stop dots are hollow rings (7–9px ink ring on ground) and the terminus is a solid orange disc. Track bars are solid rectangles: 12px (hero strip), 14px with a 3px orange border (trunk), 8px (route stops), 10px (horizontal phone strip). List bullets are 12×4px ink dashes.
+Strokes are heavy and graded: 6px horizontal rules for section signs, figures, and the board top; 3px for buttons, film frames and paused bullets; 2px for board row dividers, plaques, film buttons and status plates. Stop dots are hollow rings (7–9px ink ring on ground) and the terminus is a solid orange disc. Track bars are solid rectangles: 12px (hero strip), 14px with a 3px orange border (trunk), 8px (route stops), 10px (horizontal phone strip). List bullets are 12×4px ink dashes.
 
 ## Components
 
@@ -316,7 +316,7 @@ Smaller projects as rows under a 6px top rule, each divided by a 2px ink line: m
 16:9 video in a 3px ink frame on Platform Grey, muted, looping and autoplaying only in view (never under reduced motion), with explicit Play/Pause and Sound buttons (44px, 2px ink stroke, ink fill on hover) and a right-aligned credit line.
 
 ### Portrait
-The one photograph on the page lives in About, never in the hero: a square crop at clamp(112px, 15vw, 200px), object-fit cover, framed with the same 2px ink border as the logo plaques, flat on the ground with no radius or shadow.
+The one photograph on the page sits in the hero byline, beside the status line, small enough that the headline and proof still lead: a square crop at clamp(72px, 7vw, 96px), object-fit cover, framed with the same 2px ink border as the logo plaques, flat on the ground with no radius or shadow.
 
 ### Terminal Block
 The last stop: a full-width black band with a large orange disc ringed in Band White, the terminal headline, a Band Silver paragraph and Light/Ghost buttons.
