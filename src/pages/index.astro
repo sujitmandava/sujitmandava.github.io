@@ -322,9 +322,17 @@ const projects = [
     };
     btn.addEventListener('click', () => {
       const next = isDark() ? 'light' : 'dark';
-      root.dataset.theme = next;
-      try { localStorage.setItem('theme', next); } catch (e) {}
-      sync();
+      const apply = () => {
+        root.dataset.theme = next;
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        sync();
+      };
+      // Crossfade the whole page between themes instead of snapping; instant under reduced motion.
+      if (document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.startViewTransition(apply);
+      } else {
+        apply();
+      }
     });
     sync();
 

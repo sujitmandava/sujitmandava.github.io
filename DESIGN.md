@@ -206,7 +206,7 @@ Dark mode inverts the ground and keeps the bands. The ground goes to charcoal, i
 - Two shapes only: square-cornered rectangles and full circles.
 - Lines are literal: strip diagrams, trunk tracks and route stops are drawn bars and ringed dots.
 - Career orange is both the trunk line and the only interaction colour.
-- One authored motion: the trunk line fills as it scrolls through view.
+- One authored motion: the trunk line fills as it scrolls through view. The theme toggle is the one exception: switching themes crossfades the page over 450ms (View Transitions) while the toggle's half-disc turns 180°, and snaps under reduced motion.
 
 ## Colors
 

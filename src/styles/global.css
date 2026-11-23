@@ -158,6 +158,18 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
   cursor: pointer;
 }
 .theme:hover { border-color: var(--band-ink); }
+/* The half-disc turns over as the theme changes. */
+.theme svg { transition: transform 450ms var(--ease-out); }
+:root[data-theme="dark"] .theme svg { transform: rotate(180deg); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .theme svg { transform: rotate(180deg); } }
+
+/* Soft theme switch: a slow crossfade between the old and new page. */
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: 450ms; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+@media (prefers-reduced-motion: reduce) {
+  .theme svg { transition: none; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
 .band__cta {
   background: var(--band-ink); color: var(--band);
   padding: 10px 16px; font-weight: 700; text-decoration: none; white-space: nowrap;
