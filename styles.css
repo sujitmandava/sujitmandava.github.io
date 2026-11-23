@@ -99,16 +99,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.015
 }
 @media (min-width: 880px) { .hero-inner { grid-template-columns: 1.35fr 1fr; } }
 
-.hello { margin: 0 0 4px; font-size: 1.15rem; color: var(--muted); font-weight: 500; }
-.wave { display: inline-block; animation: wave 2.4s ease-in-out 1s 2; transform-origin: 70% 70%; }
-@keyframes wave {
-  0%, 60%, 100% { transform: rotate(0); }
-  10%, 30% { transform: rotate(14deg); }
-  20%, 40% { transform: rotate(-8deg); }
+.hello {
+  margin: 0 0 10px;
+  font-family: var(--mono); font-size: .82rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--muted);
 }
 h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 .role {
-  margin: 12px 0 0;
+  margin: 12px 0 0; max-width: 24ch; text-wrap: balance;
   font-family: var(--serif); font-size: clamp(1.25rem, 3vw, 1.6rem); font-weight: 500;
   color: var(--accent);
 }
@@ -165,6 +163,12 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 }
 .ph-logo { width: 64px; height: 64px; flex: none; border-radius: 16px; }
 .ph-logo { box-shadow: var(--shadow); }
+.logo-mark {
+  display: flex; align-items: center; justify-content: center; flex: none;
+  width: 64px; height: 64px; border-radius: 16px;
+  background: var(--brand); color: #fff; box-shadow: var(--shadow);
+}
+.logo-mark svg { width: 30px; height: 30px; }
 .ph-crest { width: 56px; height: 56px; flex: none; border-radius: 12px; }
 .ph-crest img { object-fit: contain; padding: 4px; }
 /* Exact iPhone screenshot ratio (1170×2532), so images fill the frame uncropped. */
@@ -193,11 +197,10 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 }
 .focus > div {
   padding: 18px; border-radius: 14px;
-  background: var(--surface); border: 1px solid var(--border);
+  background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--accent);
   font-size: .9rem; color: var(--muted); line-height: 1.5;
 }
 .focus strong { color: var(--text); font-weight: 600; font-size: .98rem; }
-.focus-icon { display: block; color: var(--accent); margin-bottom: 6px; }
 
 /* ---------- Education ---------- */
 .edu-list { display: grid; gap: 16px; margin-top: 36px; }
@@ -228,12 +231,15 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 }
 /* Stacked: header and text first, screenshots below. */
 @media (min-width: 960px) { .feature { --pad: 48px; gap: 40px; } }
-.feature-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+.feature-head { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 18px; }
 .feature h3 { margin: 0; font-size: 2rem; color: var(--brand); }
 [data-theme="dark"] .feature h3 { color: color-mix(in srgb, var(--brand) 55%, white); }
 .feature-tag { margin: 2px 0 0; font-weight: 500; color: var(--text); }
-.feature-info > p { margin: 0 0 18px; color: var(--muted); max-width: 72ch; }
-.feature-info > p, .highlights li { text-align: justify; hyphens: auto; }
+.feature-title { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }
+/* Description on the left, highlights and stack on the right, so wide cards don't trail off into empty space. */
+.feature-body { display: grid; gap: 4px 48px; }
+@media (min-width: 960px) { .feature-body { grid-template-columns: 1.1fr 1fr; } }
+.feature-body > p { margin: 0 0 18px; color: var(--muted); }
 
 .highlights { margin: 0 0 20px; padding: 0; list-style: none; }
 .highlights li { position: relative; padding-left: 26px; margin-bottom: 8px; font-size: .95rem; }
@@ -243,7 +249,6 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 }
 [data-theme="dark"] .highlights li::before { color: color-mix(in srgb, var(--brand) 55%, white); }
 
-.feature-links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 24px; }
 .btn-brand { background: var(--brand); color: #fff; }
 .btn-brand:hover { filter: brightness(1.12); }
 .status {
@@ -281,10 +286,12 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 }
 .card[data-cat="llm"] .cat { background: #ede9fe; color: #6d28d9; }
 .card[data-cat="ml"] .cat { background: #dcfce7; color: #15803d; }
-.card[data-cat="infra"] .cat { background: #e0f2fe; color: #0369a1; }
+.card[data-cat="quant"] .cat { background: #fef3c7; color: #b45309; }
+.card[data-cat="gov"] .cat { background: #e0f2fe; color: #0369a1; }
 [data-theme="dark"] .card[data-cat="llm"] .cat { background: #2e1f4d; color: #c4b5fd; }
 [data-theme="dark"] .card[data-cat="ml"] .cat { background: #14321f; color: #86efac; }
-[data-theme="dark"] .card[data-cat="infra"] .cat { background: #0c2a3d; color: #7dd3fc; }
+[data-theme="dark"] .card[data-cat="quant"] .cat { background: #3a2a0c; color: #fcd34d; }
+[data-theme="dark"] .card[data-cat="gov"] .cat { background: #0c2a3d; color: #7dd3fc; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: auto 0 0; padding: 0; list-style: none; }
 .feature .tags { margin: 0; }
@@ -294,8 +301,10 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
   font-family: var(--mono); font-size: .74rem; color: var(--muted);
 }
 .repo { margin-top: 16px; font-weight: 600; font-size: .92rem; }
+.repo-private { color: var(--muted); font-weight: 500; }
 
 /* ---------- Contact ---------- */
+#contact { padding-top: 0; }
 .contact {
   text-align: center;
   padding: 64px 24px; border-radius: 28px;
@@ -318,7 +327,6 @@ h1 { margin: 0; font-size: clamp(2.75rem, 8vw, 4.75rem); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
-  .wave { animation: none; }
 }
 
 /* ---------- About stats ---------- */
