@@ -417,6 +417,15 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 
 /* ---------- About ---------- */
 .about h2 { max-width: 18ch; }
+.about__head { display: flex; align-items: center; gap: clamp(20px, 3.5vw, 48px); }
+.portrait {
+  flex: none;
+  width: clamp(112px, 15vw, 200px); height: auto; aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+  background: var(--panel);
+}
+@media (max-width: 560px) { .about__head { flex-direction: column; align-items: flex-start; } }
 .about__cols { margin-top: clamp(32px, 4vw, 56px); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 80px); }
 .about__text { display: grid; gap: 20px; max-width: 66ch; }
 .rules { display: grid; gap: 28px; align-content: start; }

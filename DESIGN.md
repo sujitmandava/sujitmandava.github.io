@@ -268,7 +268,7 @@ A centred frame of 1320px with a fluid gutter (clamp(16px, 4.5vw, 72px)). A stic
 
 The hero is a two-column grid: copy on the left, and a Platform Grey panel on the right (clamp(320px, 30vw, 440px), bleeding to the viewport edge) holding a vertical strip diagram. Below 860px it stacks and the strip diagram turns horizontal, keeping only the first and last stop names.
 
-Lines change orientation with the viewport rather than disappearing: route-stop diagrams run horizontally in three columns when a route has no film, and vertically beside text otherwise or on phones. Route bodies with film split 5:7 (text:film) and stack below 960px with the film first. The departures board is a five-column grid (bullet, name and text, kind, stack, link) that collapses to two columns below 960px. About splits 7:5. Breakpoints in use: 400, 560, 600, 640, 760, 860, 960, 980, 1060px.
+Lines change orientation with the viewport rather than disappearing: route-stop diagrams run horizontally in three columns when a route has no film, and vertically beside text otherwise or on phones. Route bodies with film split 5:7 (text:film) and stack below 960px with the film first. The departures board is a five-column grid (bullet, name and text, kind, stack, link) that collapses to two columns below 960px. About opens with the portrait beside its headline (stacked above it below 560px), then splits 7:5. Breakpoints in use: 400, 560, 600, 640, 760, 860, 960, 980, 1060px.
 
 ## Elevation & Depth
 
@@ -314,6 +314,9 @@ Smaller projects as rows under a 6px top rule, each divided by a 2px ink line: m
 
 ### Films
 16:9 video in a 3px ink frame on Platform Grey, muted, looping and autoplaying only in view (never under reduced motion), with explicit Play/Pause and Sound buttons (44px, 2px ink stroke, ink fill on hover) and a right-aligned credit line.
+
+### Portrait
+The one photograph on the page lives in About, never in the hero: a square crop at clamp(112px, 15vw, 200px), object-fit cover, framed with the same 2px ink border as the logo plaques, flat on the ground with no radius or shadow.
 
 ### Terminal Block
 The last stop: a full-width black band with a large orange disc ringed in Band White, the terminal headline, a Band Silver paragraph and Light/Ghost buttons.
