@@ -26,7 +26,7 @@ const products = [
       'One React codebase ships to web, iOS, and Android via Capacitor',
     ],
     stack: ['React', 'TypeScript', 'Capacitor', 'FastAPI', 'PostgreSQL', 'Azure OpenAI'],
-    video: { src: '/video/wren.mp4', poster: '/video/wren-poster.webp', label: 'Wren launch film: the Home screen walking through one evening, from Wren Time with Ruth to “Today’s done”.' },
+    video: { src: '/video/wren.mp4', poster: '/video/wren-poster.webp', label: 'Wren launch film: the Home screen walking through one evening, from Wren Time with Ruth to “Today’s done”.', credit: 'Music: Sascha Ende, CC BY 4.0' },
   },
   {
     id: 'fpl',
@@ -42,6 +42,7 @@ const products = [
     ],
     stack: ['Python', 'PuLP', 'pandas', 'FastAPI', 'Next.js'],
     link: { href: 'https://github.com/sujitmandava/fpl-agent-ai', text: 'Source' },
+    video: { src: '/video/fpl.mp4', poster: '/video/fpl-poster.webp', label: 'FPL Agent AI launch film: a sample team ID goes in, and this week’s transfers are drawn on a tactics board against a mini-league rival.', credit: 'Music: Sascha Ende, CC BY 4.0' },
   },
   {
     id: 'safewatch',
@@ -76,6 +77,8 @@ const projects = [
   <title>Sujit Mandava · Applied AI engineer</title>
   <meta name="description" content="Sujit Mandava, applied AI engineer: measured ML results at Relativity, and three self-built products: Wren, an FPL planner, and SafeWatch. Open to roles from December 2026." />
   <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#111111" />
   <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
   <script is:inline>
     try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
@@ -157,7 +160,7 @@ const projects = [
             <li>Built deployment, observability, and monitoring pipelines from scratch, so incidents surfaced as dashboard alerts instead of user reports</li>
             <li>Moved CareTab's scheduled and long-running jobs onto Celery workers, keeping API latency stable under load</li>
           </ul>
-          <p class="stack">Django · Celery · AWS · Docker · nginx · Grafana / Loki</p>
+          <p class="stack"><span>Django</span> <span>Celery</span> <span>AWS</span> <span>Docker</span> <span>nginx</span> <span>Grafana / Loki</span> </p>
         </li>
 
         <li class="stop" id="northwestern">
@@ -188,7 +191,7 @@ const projects = [
             <div><dt>Supporting citations</dt><dd><span>+62%</span></dd><p>Including 13 that expert review confirmed the original filing missed</p></div>
             <div><dt>Cost per claim</dt><dd><span>$17</span></dd><p>vs. $400 for exhaustive LLM review, keeping 80% of its recall</p></div>
           </dl>
-          <p class="stack">Hybrid RAG · Agentic retrieval · RRF fusion · LLM-as-judge · DSPy / GEPA</p>
+          <p class="stack"><span>Hybrid RAG</span> <span>Agentic retrieval</span> <span>RRF fusion</span> <span>LLM-as-judge</span> <span>DSPy / GEPA</span> </p>
         </li>
 
         <li class="stop stop--end">
@@ -227,7 +230,7 @@ const projects = [
               <ol class="route__stops" aria-label={`What ${p.name} does`}>
                 {p.stops.map((s) => <li>{s}</li>)}
               </ol>
-              <p class="stack">{p.stack.join(' · ')}</p>
+              <p class="stack">{p.stack.map((t) => <span>{t}</span>)}</p>
               {p.link && <a class="textlink" href={p.link.href}>{p.link.text} <Arrow dir="up-right" size={16} /></a>}
             </div>
 
@@ -245,7 +248,7 @@ const projects = [
                     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="i-on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="i-off" d="M16.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
                     <span>Sound off</span>
                   </button>
-                  <span class="film__credit">Music: Sascha Ende, CC BY 4.0</span>
+                  <span class="film__credit">{p.video.credit}</span>
                 </figcaption>
               </figure>
             )}
@@ -269,7 +272,7 @@ const projects = [
               <p>{x.text}</p>
             </div>
             <p class="board__kind">{x.kind}</p>
-            <p class="board__stack">{x.stack}</p>
+            <p class="board__stack">{x.stack.split(' · ').map((t) => <span>{t}</span>)}</p>
             <p class="board__link">
               {x.href ? <a class="textlink" href={x.href}>Source <Arrow dir="up-right" size={16} /><span class="sr"> for {x.name}</span></a>
                 : x.paused ? <span class="muted">Not running</span>

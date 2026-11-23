@@ -266,7 +266,7 @@ A signage palette: black, white and route colours, each route colour standing fo
 
 A centred frame of 1320px with a fluid gutter (clamp(16px, 4.5vw, 72px)). A sticky 68px signage band sits on top; anchor scrolling pads by the band height plus 16px. Sections open clamp(80px, 12vw, 152px) below the previous one and start with a sign: a large bullet (or a cluster of bullets) beside the headline, underlined by a 6px ink rule.
 
-The hero is a two-column grid: copy on the left, and a Platform Grey panel on the right (clamp(320px, 30vw, 440px), bleeding to the viewport edge) holding a vertical strip diagram. Below 860px it stacks; below 760px the strip diagram turns horizontal and keeps only the first and last stop names.
+The hero is a two-column grid: copy on the left, and a Platform Grey panel on the right (clamp(320px, 30vw, 440px), bleeding to the viewport edge) holding a vertical strip diagram. Below 860px it stacks and the strip diagram turns horizontal, keeping only the first and last stop names.
 
 Lines change orientation with the viewport rather than disappearing: route-stop diagrams run horizontally in three columns when a route has no film, and vertically beside text otherwise or on phones. Route bodies with film split 5:7 (text:film) and stack below 960px with the film first. The departures board is a five-column grid (bullet, name and text, kind, stack, link) that collapses to two columns below 960px. About splits 7:5. Breakpoints in use: 400, 560, 600, 640, 760, 860, 960, 980, 1060px.
 
@@ -307,7 +307,7 @@ The hero's career map on Platform Grey: a 12px orange track behind hollow 46px s
 The Experience section as a vertical line: 44px hollow stop dots (9px ring), a 14px orange track between consecutive stops, a 64px white logo plaque (2px ink border) beside each stop title, Worn Ink metadata, and dash-bulleted lists. The final stop is a 52px solid orange disc. The track fills top to bottom as it scrolls into view (scroll-driven, `entry 40%` to `cover 55%`), and renders solid without scroll timelines or under reduced motion.
 
 ### Route Signs
-Each product opens with a black band: large route bullet, Route Title name with a Band Silver tagline, and a status plate on the right (2px white border, 700, hidden below 760px). Below it, a "stops" diagram in the route's colour: an 8px bar with 30px hollow dots (7px ink ring) marking what the product does.
+Each product opens with a black band: large route bullet, Route Title name with a Band Silver tagline, and a status plate on the right (2px white border, 700, hidden below 760px). Below it, a "stops" diagram in the route's colour: an 8px bar with 30px hollow dots (7px ink ring) marking what the product does. Like every line in the system, the bar runs dot to dot and stops at the last stop; it never runs past a terminus. Tech-stack lists keep each item and its trailing separator together so a line never starts with a dot.
 
 ### Departures Board
 Smaller projects as rows under a 6px top rule, each divided by a 2px ink line: medium grey bullet, 800 name with a Worn Ink description, a bold kind column, a stack column and a right-aligned source link or a muted "Private repo" / "Not running".

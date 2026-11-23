@@ -230,7 +230,7 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 .strip a:hover .strip__name { text-decoration: underline; text-decoration-thickness: 2px; }
 .strip__end .strip__dot { background: var(--career); border-color: var(--career); }
 
-@media (max-width: 760px) {
+@media (max-width: 860px) {
   .strip { padding: 28px var(--gutter) 24px; }
   .strip ol { grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0; }
   .strip ol::before { left: 18px; right: 18px; top: 11px; bottom: auto; width: auto; height: 10px; }
@@ -302,6 +302,9 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 }
 .plaque img { width: 100%; height: 100%; object-fit: contain; }
 .stack { margin-top: 20px; font-size: 0.95rem; font-weight: 600; color: var(--ink-2); }
+.stack, .board__stack { display: flex; flex-wrap: wrap; column-gap: 0.35em; }
+.stack span, .board__stack span { white-space: nowrap; }
+.stack span:not(:last-child)::after, .board__stack span:not(:last-child)::after { content: " ·"; }
 
 /* Relativity's results, set like platform numbers */
 .figures { margin: 40px 0 0; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 40px); }
@@ -343,19 +346,20 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 .route__text .textlink { display: inline-block; margin-top: 20px; }
 
 /* Each product's stops: a strip diagram in the route's colour */
-.route__stops { --c: var(--other); position: relative; margin-top: 36px; display: grid; gap: 22px; counter-reset: s; }
+.route__stops { --c: var(--other); --g: 22px; position: relative; margin-top: 36px; display: grid; gap: var(--g); }
 .route[data-route="wren"] .route__stops { --c: var(--wren); }
 .route[data-route="fpl"] .route__stops { --c: var(--fpl); }
 .route[data-route="safewatch"] .route__stops { --c: var(--safewatch); }
-.route__stops::before { content: ""; position: absolute; left: 11px; top: 10px; bottom: 10px; width: 8px; background: var(--c); }
 .route__stops li { position: relative; padding-left: 48px; max-width: 62ch; }
+.route__stops li:not(:last-child)::after { content: ""; position: absolute; z-index: -1; left: 11px; top: 0.6em; height: calc(100% + var(--g)); width: 8px; background: var(--c); }
+.route__stops { isolation: isolate; }
 .route__stops li::before {
   content: ""; position: absolute; left: 0; top: 0.1em;
   width: 30px; height: 30px; border-radius: 50%;
   background: var(--ground); border: 7px solid var(--ink);
 }
-.route__body:not(.route__body--media) .route__stops { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); padding-top: 52px; }
-.route__body:not(.route__body--media) .route__stops::before { left: 0; right: 0; top: 11px; bottom: auto; width: auto; height: 8px; }
+.route__body:not(.route__body--media) .route__stops { --g: clamp(20px, 3vw, 40px); grid-template-columns: repeat(3, minmax(0, 1fr)); padding-top: 52px; }
+.route__body:not(.route__body--media) .route__stops li:not(:last-child)::after { left: 15px; top: -41px; height: 8px; width: calc(100% + var(--g)); }
 .route__body:not(.route__body--media) .route__stops li { padding-left: 0; }
 .route__body:not(.route__body--media) .route__stops li::before { top: -52px; }
 
@@ -365,7 +369,7 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em
 }
 @media (max-width: 760px) {
   .route__body:not(.route__body--media) .route__stops { grid-template-columns: 1fr; padding-top: 0; gap: 22px; }
-  .route__body:not(.route__body--media) .route__stops::before { left: 11px; right: auto; top: 10px; bottom: 10px; width: 8px; height: auto; }
+  .route__body:not(.route__body--media) .route__stops li:not(:last-child)::after { left: 11px; top: 0.6em; height: calc(100% + var(--g)); width: 8px; }
   .route__body:not(.route__body--media) .route__stops li { padding-left: 48px; }
   .route__body:not(.route__body--media) .route__stops li::before { top: 0.1em; }
   .route__status { display: none; }
