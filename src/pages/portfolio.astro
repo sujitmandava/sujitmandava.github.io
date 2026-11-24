@@ -1,0 +1,357 @@
+---
+// Portfolio PDF source. Fixed landscape Letter sheets, rendered to public/portfolio.pdf by `pnpm pdf`.
+// Same facts as the site (src/data/site.ts), laid out as pages rather than a scroll.
+import Bullet from '../components/Bullet.astro';
+import Arrow from '../components/Arrow.astro';
+import '../styles/global.css';
+import { email, products, projects } from '../data/site';
+
+const site = 'https://sujitmandava.github.io';
+const siteLabel = 'sujitmandava.github.io';
+const linkedin = 'https://www.linkedin.com/in/sujit-mandava';
+const github = 'https://github.com/sujitmandava';
+const total = 7;
+
+const line = [
+  { name: 'IIT Palakkad', note: 'B.Tech CSE', when: '2020–24' },
+  { name: 'hGrid', note: 'Software Engineer', when: '2024–25' },
+  { name: 'Northwestern', note: 'M.S. AI', when: '2025–26' },
+  { name: 'Relativity', note: 'Applied Scientist Intern', when: 'Summer 2026' },
+  { name: 'Your team', note: 'From December 2026', when: '', end: true },
+];
+---
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1056" />
+  <meta name="robots" content="noindex" />
+  <title>Sujit Mandava · Portfolio</title>
+  <meta name="author" content="Sujit Mandava" />
+  <meta name="description" content="Portfolio of Sujit Mandava, applied AI engineer and product builder." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body class="pf">
+
+  <!-- 1 · Cover -->
+  <section class="sheet cover">
+    <header class="sheet__band">
+      <span class="sheet__name">Sujit Mandava</span>
+      <span class="sheet__role">AI engineer · Product builder</span>
+    </header>
+    <div class="cover__grid">
+      <div class="cover__copy">
+        <h1>I measure every change and ship whole products.</h1>
+        <p class="cover__lede">
+          I started as a full-stack engineer and moved into ML to build the parts of products that think.
+          At Relativity I more than doubled evidence recall on 47K legal documents, at 4% of the cost of brute-force LLM review.
+          On my own I build Wren, an FPL planner, and SafeWatch, from schema to shipped app.
+        </p>
+        <p class="status">Open to AI/ML roles from December 2026 · M.S. AI, Northwestern · Evanston, IL</p>
+      </div>
+      <div class="cover__side">
+        <img class="cover__portrait" src="/images/portrait.webp" alt="Sujit Mandava" width="480" height="480" />
+        <ol class="vstrip">
+          {line.map((s) => (
+            <li class:list={{ 'is-end': s.end }}><span class="dot"></span><span class="vstrip__name">{s.name}</span><span class="vstrip__note">{s.note}{s.when && ` · ${s.when}`}</span></li>
+          ))}
+        </ol>
+      </div>
+    </div>
+    <footer class="cover__contact">
+      <a href={`mailto:${email}`}>{email}</a>
+      <a href={site}>{siteLabel}</a>
+      <a href={linkedin}>linkedin.com/in/sujit-mandava</a>
+      <a href={github}>github.com/sujitmandava</a>
+    </footer>
+  </section>
+
+  <!-- 2 · The line so far -->
+  <section class="sheet">
+    <div class="sign"><Bullet letter="L" route="career" size="lg" /><h2>The line so far</h2></div>
+    <ol class="hline">
+      {line.map((s) => (
+        <li class:list={{ 'is-end': s.end, 'is-major': s.name === 'Relativity' }}><span class="dot"></span><strong>{s.name}</strong><span>{s.when || s.note}</span></li>
+      ))}
+    </ol>
+    <div class="stops3">
+      <article class="pstop">
+        <div class="pstop__head">
+          <span class="plaque"><img src="/images/school-2.png" alt="IIT Palakkad logo" /></span>
+          <div><h3>IIT Palakkad</h3><p class="meta">B.Tech, Computer Science &amp; Engineering · Oct 2020 – Jul 2024</p></div>
+        </div>
+        <p>Captained the basketball club, grew it from 8 to 65+ members, and founded the institute's first women's team. Off the keyboard I'm still on a court.</p>
+      </article>
+      <article class="pstop">
+        <div class="pstop__head">
+          <span class="plaque"><img src="/images/hgrid.svg" alt="hGrid logo" /></span>
+          <div><h3>Software Engineer, hGrid</h3><p class="meta">Mahathi Software · Dec 2024 – Aug 2025</p></div>
+        </div>
+        <ul class="ticks">
+          <li>Owned the full-stack architecture of three production products (CareTab, SunPay, and Docuracy), designed from a blank slate on Amazon RDS</li>
+          <li>Built deployment, observability, and monitoring pipelines from scratch, so incidents surfaced as dashboard alerts instead of user reports</li>
+          <li>Moved CareTab's scheduled and long-running jobs onto Celery workers, keeping API latency stable under load</li>
+        </ul>
+        <p class="stack"><span>Django</span> <span>Celery</span> <span>AWS</span> <span>Docker</span> <span>nginx</span> <span>Grafana / Loki</span></p>
+      </article>
+      <article class="pstop">
+        <div class="pstop__head">
+          <span class="plaque"><img src="/images/school-1.jpg" alt="Northwestern University logo" /></span>
+          <div><h3>Northwestern University</h3><p class="meta">M.S. Artificial Intelligence · Sep 2025 – Dec 2026 · Evanston, IL</p></div>
+        </div>
+        <p>I paired the ML core with how AI gets built and adopted inside real organizations.</p>
+        <p class="stack"><span>Deep Learning</span> <span>NLP</span> <span>Generative AI</span> <span>Technical Product Management</span> <span class="stack__long">Strategy and Adoption of AI in Organizations</span></p>
+      </article>
+    </div>
+    <footer class="folio"><span>Sujit Mandava</span><span>The line so far</span><span>2 / {total}</span></footer>
+  </section>
+
+  <!-- 3 · Relativity -->
+  <section class="sheet sheet--rel">
+    <div class="sign">
+      <span class="plaque plaque--lg"><img src="/images/relativity.png" alt="Relativity logo" /></span>
+      <div><h2>Applied Scientist Intern, Relativity</h2><p class="sign__meta">Jun 2026 – Aug 2026 · The most recent stop on the line</p></div>
+    </div>
+    <p class="lead">
+      Built an agentic system that surfaces supporting evidence for legal claims across a 47K-document OCR'd corpus.
+      It combines hybrid RAG and agentic retrieval with an LLM judge that ranks candidate evidence, and reviewer
+      feedback flows back in through GEPA-optimized ranking prompts.
+    </p>
+    <dl class="figures pf-figures">
+      <div><dt>Evidence recall, top 1,000</dt><dd><span>0.30</span><span class="arrow"><Arrow size={56} /><span class="sr"> to </span></span><span>0.68</span></dd><p>More than double the claim-anchored baseline</p></div>
+      <div><dt>Supporting citations</dt><dd><span>+62%</span></dd><p>Including 13 that expert review confirmed the original filing missed</p></div>
+      <div><dt>Cost per claim</dt><dd><span>$17</span></dd><p>vs. $400 for exhaustive LLM review, keeping 80% of its recall</p></div>
+    </dl>
+    <p class="stack"><span>Hybrid RAG</span> <span>Agentic retrieval</span> <span>RRF fusion</span> <span>LLM-as-judge</span> <span>DSPy / GEPA</span></p>
+    <footer class="folio"><span>Sujit Mandava</span><span>Relativity</span><span>3 / {total}</span></footer>
+  </section>
+
+  <!-- 4–6 · Products -->
+  {products.map((p, i) => (
+    <section class="sheet" data-route={p.id}>
+      <header class="route__sign">
+        <Bullet letter={p.letter} route={p.id as any} size="lg" />
+        <div class="route__titles">
+          <h2>{p.name}</h2>
+          <p>{p.tag}</p>
+        </div>
+        <span class="route__status">{p.status}</span>
+      </header>
+
+      <div class:list={['pf-route', { 'pf-route--media': p.video }]}>
+        <div class="pf-route__text">
+          <p>{p.body}</p>
+          <ol class="route__stops">
+            {p.stops.map((s) => <li>{s}</li>)}
+          </ol>
+          <p class="stack">{p.stack.map((t) => <span>{t}</span>)}</p>
+        </div>
+        {p.video && (
+          <figure class="pf-film">
+            <a href={`${site}/#${p.id}`}><img src={p.video.poster} alt={p.video.label} /></a>
+            <figcaption>
+              <a class="textlink" href={`${site}/#${p.id}`}>Watch the launch film <Arrow dir="up-right" size={14} /></a>
+              {p.link && <a class="textlink" href={p.link.href}>{p.link.href.replace('https://', '')} <Arrow dir="up-right" size={14} /></a>}
+            </figcaption>
+          </figure>
+        )}
+      </div>
+      <footer class="folio"><span>Sujit Mandava</span><span>Products I'm building</span><span>{i + 4} / {total}</span></footer>
+    </section>
+  ))}
+
+  <!-- 7 · Other lines + terminal -->
+  <section class="sheet sheet--last">
+    <div class="sign sign--flat"><Bullet letter="+" route="other" size="lg" /><h2>Other lines</h2><p class="sign__aside">Smaller builds where I go deep on one idea.</p></div>
+    <ul class="pf-board">
+      {projects.map((x) => (
+        <li class:list={{ 'is-paused': x.paused }}>
+          <Bullet letter={x.letter} route="other" size="sm" />
+          <div>
+            <h3>{x.name} <span class="pf-board__kind">{x.kind}</span></h3>
+            <p>{x.text}</p>
+            <p class="pf-board__foot">
+              <span>{x.stack}</span>
+              {x.href ? <a href={x.href}>{x.href.replace('https://', '')}</a> : <span>{x.paused ? 'Not running' : 'Private repo'}</span>}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ul>
+    <div class="pf-terminal">
+      <span class="terminal__dot" aria-hidden="true"></span>
+      <div>
+        <h2>Last stop: your team. I can start in December.</h2>
+        <p class="pf-terminal__links">
+          <a href={`mailto:${email}`}>{email}</a>
+          <a href={`${site}/resume.pdf`}>Résumé</a>
+          <a href={linkedin}>LinkedIn</a>
+          <a href={github}>GitHub</a>
+          <a href={site}>{siteLabel}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+
+<style is:global>
+  /* Print layout: one 11 × 8.5 in sheet per section. 1in = 96px. */
+  @page { size: 11in 8.5in; margin: 0; }
+
+  html:has(body.pf) { background: #d6d6d6; scroll-behavior: auto; }
+  body.pf { background: transparent; font-size: 13px; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pf a { text-decoration: none; }
+
+  .sheet {
+    --m: 0.55in;
+    position: relative;
+    width: 11in; height: 8.5in;
+    margin: 24px auto;
+    padding: var(--m) var(--m) 0.95in;
+    background: #fff;
+    overflow: hidden;
+    break-after: page;
+  }
+  .sheet:last-child { break-after: auto; }
+  @media print {
+    html:has(body.pf) { background: #fff; }
+    .sheet { margin: 0; }
+  }
+
+  /* Running footer, set like a platform sign */
+  .folio {
+    position: absolute; left: var(--m); right: var(--m); bottom: 0.4in;
+    display: flex; justify-content: space-between;
+    padding-top: 8px; border-top: 2px solid var(--ink);
+    font-size: 10.5px; font-weight: 700; color: var(--ink-2);
+  }
+  .folio span:first-child { color: var(--ink); }
+
+  /* Shared sizing overrides for paper */
+  .pf .bullet--lg { width: 52px; height: 52px; font-size: 1.75rem; }
+  .pf .bullet--sm { width: 26px; height: 26px; font-size: 0.85rem; }
+  .pf .sign { padding-bottom: 14px; gap: 16px; }
+  .pf .sign h2 { font-size: 40px; }
+  .pf .sign--flat { border-bottom: 0; padding-bottom: 0; }
+  .sign__meta { margin-top: 6px; color: var(--ink-2); font-size: 14px; }
+  .sign__aside { margin-left: auto; color: var(--ink-2); font-size: 14px; align-self: flex-end; padding-bottom: 6px; }
+  .pf .stack { margin-top: 14px; font-size: 11.5px; }
+  .pf .plaque { width: 48px; height: 48px; padding: 5px; }
+  .pf .plaque--lg { width: 60px; height: 60px; }
+  .dot { display: block; flex: none; border-radius: 50%; background: #fff; border: 6px solid var(--ink); }
+
+  /* 1 · Cover */
+  .sheet.cover { padding: 0; display: grid; grid-template-rows: auto 1fr auto; }
+  .sheet__band {
+    position: relative; background: var(--band); color: var(--band-ink);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 var(--m) 6px; height: 0.7in;
+  }
+  .sheet__band::after { content: ""; position: absolute; left: 0; right: 0; bottom: 6px; height: 2px; background: var(--band-ink); }
+  .sheet__name { font-weight: 800; font-size: 20px; letter-spacing: -0.02em; }
+  .sheet__role { font-weight: 600; font-size: 13px; color: var(--band-ink-2); }
+  .cover__grid { display: grid; grid-template-columns: minmax(0, 1fr) 3.5in; min-height: 0; }
+  .cover__copy { padding: 0.5in 0.45in 0.4in var(--m); display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+  .cover h1 { font-size: 68px; font-weight: 800; line-height: 0.94; letter-spacing: -0.035em; max-width: 12ch; }
+  .cover__lede { font-size: 15.5px; line-height: 1.5; color: var(--ink-2); max-width: 52ch; }
+  .status { font-weight: 700; font-size: 12.5px; display: flex; align-items: center; gap: 9px; }
+  .status::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: var(--career); flex: none; }
+  .cover__side { background: var(--panel); padding: 0.45in var(--m) 0.4in 0.4in; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+  .cover__portrait { width: 1.45in; height: 1.45in; object-fit: cover; border: 2px solid var(--ink); }
+  .vstrip { position: relative; display: grid; gap: 15px; }
+  .vstrip::before { content: ""; position: absolute; left: 12px; top: 14px; bottom: 16px; width: 9px; background: var(--career); }
+  .vstrip li { position: relative; display: grid; grid-template-columns: 33px 1fr; column-gap: 14px; }
+  .vstrip .dot { grid-row: span 2; width: 33px; height: 33px; }
+  .vstrip__name { font-weight: 800; font-size: 16px; letter-spacing: -0.02em; line-height: 1.2; padding-top: 1px; }
+  .vstrip__note { font-size: 11.5px; color: var(--ink-2); }
+  .vstrip .is-end .dot, .hline .is-end .dot { background: var(--career); border-color: var(--career); }
+  .cover__contact {
+    background: var(--band); color: var(--band-ink);
+    display: flex; gap: 32px; padding: 16px var(--m);
+    font-weight: 700; font-size: 12.5px;
+  }
+  .cover__contact a:first-child { margin-right: auto; }
+
+  /* 2 · The line, drawn horizontally */
+  .hline { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 30px; }
+  .hline::before { content: ""; position: absolute; left: 14px; right: calc(20% - 14px); top: 11px; height: 10px; background: var(--career); }
+  .hline li { position: relative; display: grid; gap: 2px; justify-items: start; }
+  .hline .dot { width: 32px; height: 32px; margin-bottom: 8px; }
+  .hline strong { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; }
+  .hline span:not(.dot) { font-size: 11.5px; color: var(--ink-2); }
+  .hline .is-major .dot { border-width: 8px; }
+  .stops3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.35in; margin-top: 34px; }
+  .pstop { border-top: var(--rule) solid var(--ink); padding-top: 16px; font-size: 14px; }
+  .pstop__head { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
+  .pstop h3 { font-size: 18px; font-weight: 800; line-height: 1.1; }
+  .meta { margin-top: 4px; font-size: 11px; color: var(--ink-2); line-height: 1.35; }
+  .ticks { display: grid; gap: 8px; }
+  .ticks li { position: relative; padding-left: 20px; }
+  .ticks li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 10px; height: 3px; background: var(--ink); }
+
+  /* Headless print evaluates the site's narrow breakpoints; pin the wide layout. */
+  .pf .route__status { display: block; }
+  .pf .figures { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr); }
+  .pf .figures > div:first-child { grid-column: auto; }
+
+  /* 3 · Relativity */
+  .sheet--rel { display: flex; flex-direction: column; }
+  .sheet--rel .lead { margin-top: auto; }
+  .sheet--rel .pf-figures + .stack { margin-bottom: auto; }
+  .lead { margin-top: 28px; font-size: 19px; line-height: 1.5; max-width: 68ch; }
+  .pf-figures { margin-top: 36px; gap: 32px; }
+  .pf .pf-figures dt { font-size: 13px; }
+  .pf .pf-figures dd { font-size: 72px; margin-top: 10px; }
+  .pf .pf-figures p { font-size: 13px; margin-top: 10px; }
+  .sheet .pf-figures + .stack { margin-top: 36px; font-size: 13px; }
+
+  /* 4–6 · Products */
+  .pf .route__sign { padding: 18px 24px 24px; gap: 20px; }
+  .pf .route__titles h2 { font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+  .pf .route__titles p { margin-top: 6px; color: var(--band-ink-2); font-size: 15px; }
+  .pf .route__status { font-size: 12px; padding: 5px 10px; }
+  .sheet[data-route] { display: flex; flex-direction: column; }
+  .pf-route { flex: 1; display: grid; gap: 0.4in; align-content: center; padding-bottom: 0.15in; }
+  .pf-route--media { grid-template-columns: minmax(0, 3.7fr) minmax(0, 6.3fr); align-items: center; }
+  .pf-route__text > p:first-child { font-size: 15px; line-height: 1.55; max-width: 62ch; }
+  .pf .route__stops { margin-top: 28px; --g: 18px; }
+  .pf .route__stops li { padding-left: 38px; font-size: 13.5px; }
+  .pf .route__stops li::before { width: 24px; height: 24px; border-width: 6px; }
+  .pf .route__stops li:not(:last-child)::after { left: 9px; width: 6px; }
+  .sheet[data-route="wren"] .route__stops { --c: var(--wren); }
+  .sheet[data-route="fpl"] .route__stops { --c: var(--fpl); }
+  .sheet[data-route="safewatch"] .route__stops { --c: var(--safewatch); }
+  /* SafeWatch has no film: its stops run across the page */
+  .pf-route:not(.pf-route--media) .pf-route__text > p:first-child { font-size: 21px; line-height: 1.5; max-width: 62ch; }
+  .pf-route:not(.pf-route--media) .route__stops { grid-template-columns: repeat(3, minmax(0, 1fr)); --g: 32px; padding-top: 44px; margin-top: 56px; }
+  .pf-route:not(.pf-route--media) .route__stops li { padding-left: 0; font-size: 15px; }
+  .pf-route:not(.pf-route--media) .stack { margin-top: 40px; font-size: 13px; }
+  .pf-route:not(.pf-route--media) .route__stops li::before { top: -44px; }
+  .pf-route:not(.pf-route--media) .route__stops li:not(:last-child)::after { left: 12px; top: -35px; height: 6px; width: calc(100% + var(--g)); }
+  .pf-film { margin: 0; }
+  .pf-film img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 3px solid var(--ink); }
+  .pf-film figcaption { margin-top: 12px; display: flex; justify-content: space-between; gap: 16px; font-size: 12px; }
+  .pf .textlink { gap: 5px; }
+
+  /* 7 · Other lines + terminal */
+  .sheet--last { padding-bottom: 0; display: flex; flex-direction: column; }
+  .pf-board { margin-top: 16px; border-top: var(--rule) solid var(--ink); display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.4in; }
+  .pf-board li { display: grid; grid-template-columns: 26px 1fr; gap: 12px; padding: 18px 0; border-bottom: 2px solid var(--ink); }
+  .pf-board h3 { font-size: 15px; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; }
+  .pf-board__kind { margin-left: 6px; font-size: 10.5px; font-weight: 700; color: var(--ink-2); letter-spacing: 0; }
+  .pf-board p { margin-top: 4px; font-size: 11.5px; color: var(--ink-2); line-height: 1.45; }
+  .pf-board__foot { display: flex; justify-content: space-between; gap: 12px; font-size: 10.5px !important; font-weight: 700; }
+  .pf-board__foot a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1.5px; }
+  .pf-board .is-paused .bullet { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+  .pf-terminal {
+    margin: auto calc(-1 * var(--m)) 0; background: var(--band); color: var(--band-ink);
+    display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;
+    padding: 0.35in var(--m);
+  }
+  .pf-terminal .terminal__dot { width: 56px; border-width: 8px; }
+  .pf-terminal h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+  .pf-terminal__links { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px 24px; font-weight: 700; font-size: 13px; }
+  .pf-terminal__links a { color: var(--band-ink); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.2em; }
+</style>
